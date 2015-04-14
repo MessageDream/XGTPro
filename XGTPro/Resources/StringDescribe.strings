@@ -1,0 +1,41 @@
+/* 
+  StringDescribe.strings
+  LightErector
+
+  Created by Jayden Zhao on 13-5-14.
+  Copyright (c) 2013年 LightErector. All rights reserved.
+*/
+//登录
+"HttpError1"="网络连接失败，请稍后再试";
+"HttpError2"="请求超时，请稍后再试";
+"HttpError3"="写入本地文件失败";
+"HttpError4"="当前无网络连接，请稍后再试";
+
+"UserNameLogin"="请输入账号";
+"UserPasswordLogin"="请输入密码";
+"RememberMe"="记住账号";
+"AutoLogin"="自动登陆";
+"Login"="登陆";
+"ForgetPassword"="忘记了您的密码";
+"FindPassword"="找回密码";
+"AccountNumberIsNull"="账号为空";
+"PasswordIsNull"="密码为空";
+"TodayTask"="今日任务";
+"OrderList"="订单列表";
+"about"="关于";
+"WaitingClearing"="待结算";
+"AccountManager"="账户管理";
+"MobilePhone"="手机:";
+"ContactPeople"="联系人:";
+"SubTime"="预约时间:";
+"Address"="地址:";
+"Detail"="详情:";
+"Remark"="备注:";
+"GoInstall"="去安装";
+
+"OrderList"="订单列表";
+"UnAccept"="待接单";
+"UnSub"="待预约";
+"UnInstall"="待安装";
+"SubAgain"="再预约";
+"UnFeedBack"="待反馈";
