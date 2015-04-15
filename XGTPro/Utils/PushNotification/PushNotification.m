@@ -61,7 +61,7 @@ static id pushNotification;
 {
     [[UIApplication sharedApplication ] setApplicationIconBadgeNumber:applicationIconBadgeNumber];
 }
--(int)applicationIconBadgeNumber
+-(NSInteger)applicationIconBadgeNumber
 {
     return [UIApplication sharedApplication].applicationIconBadgeNumber;
 }

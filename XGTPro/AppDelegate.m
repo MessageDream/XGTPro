@@ -7,11 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "JPushNotification.h"
+//#import "JPushNotification.h"
 
 @interface AppDelegate()
 {
-    __weak PushNotification *jpush;
+//    __weak PushNotification *jpush;
 }
 @end
 @implementation AppDelegate
@@ -80,12 +80,12 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     
-     [jpush registerDeviceToken:deviceToken];
+//     [jpush registerDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-     [jpush receivePushNotification:userInfo];
+//     [jpush receivePushNotification:userInfo];
 }
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
@@ -95,7 +95,7 @@
 
 #ifdef __IPHONE_7_0
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-     [jpush receivePushNotification:userInfo];
+//     [jpush receivePushNotification:userInfo];
     completionHandler(UIBackgroundFetchResultNoData);
 }
 

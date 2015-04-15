@@ -163,7 +163,7 @@ static NSOperationQueue *operationQueue = nil;
     
     if (_resquestHeads != nil) {
         NSMutableDictionary *headdic=[NSMutableDictionary dictionaryWithDictionary:request.allHTTPHeaderFields ];
-        int headCount=_resquestHeads.allValues.count;
+        NSInteger headCount=_resquestHeads.allValues.count;
             for (int index=0; index<headCount; index++)
                 {
                     [headdic setValue:_resquestHeads.allValues[index] forKey:[_resquestHeads.allValues objectAtIndex:index]];
