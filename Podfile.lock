@@ -1,39 +1,43 @@
 PODS:
-  - AFNetworking (2.5.2):
-    - AFNetworking/NSURLConnection (= 2.5.2)
-    - AFNetworking/NSURLSession (= 2.5.2)
-    - AFNetworking/Reachability (= 2.5.2)
-    - AFNetworking/Security (= 2.5.2)
-    - AFNetworking/Serialization (= 2.5.2)
-    - AFNetworking/UIKit (= 2.5.2)
+  - AFNetworking (2.5.0):
+    - AFNetworking/NSURLConnection (= 2.5.0)
+    - AFNetworking/NSURLSession (= 2.5.0)
+    - AFNetworking/Reachability (= 2.5.0)
+    - AFNetworking/Security (= 2.5.0)
+    - AFNetworking/Serialization (= 2.5.0)
+    - AFNetworking/UIKit (= 2.5.0)
   - AFNetworking-RACExtensions (0.1.6):
     - AFNetworking (~> 2.0)
     - ReactiveCocoa (~> 2.0)
-  - AFNetworking/NSURLConnection (2.5.2):
+  - AFNetworking/NSURLConnection (2.5.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.2):
+  - AFNetworking/NSURLSession (2.5.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.2)
-  - AFNetworking/Security (2.5.2)
-  - AFNetworking/Serialization (2.5.2)
-  - AFNetworking/UIKit (2.5.2):
+  - AFNetworking/Reachability (2.5.0)
+  - AFNetworking/Security (2.5.0)
+  - AFNetworking/Serialization (2.5.0)
+  - AFNetworking/UIKit (2.5.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - JSONModel (1.0.2)
-  - Masonry (0.6.1)
-  - ReactiveCocoa (2.4.7):
-    - ReactiveCocoa/UI (= 2.4.7)
-  - ReactiveCocoa/Core (2.4.7):
+  - Masonry (0.6.0)
+  - ReactiveCocoa (2.4.4):
+    - ReactiveCocoa/UI (= 2.4.4)
+  - ReactiveCocoa/Core (2.4.4):
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.4.7)
-  - ReactiveCocoa/UI (2.4.7):
+  - ReactiveCocoa/no-arc (2.4.4)
+  - ReactiveCocoa/UI (2.4.4):
     - ReactiveCocoa/Core
   - ReactiveViewModel (0.3):
     - ReactiveCocoa (~> 2.4)
+  - SDWebImage (3.7.1):
+    - SDWebImage/Core (= 3.7.1)
+  - SDWebImage/Core (3.7.1)
+  - SVProgressHUD (1.1.2)
 
 DEPENDENCIES:
   - AFNetworking
@@ -42,13 +46,17 @@ DEPENDENCIES:
   - Masonry
   - ReactiveCocoa
   - ReactiveViewModel
+  - SDWebImage
+  - SVProgressHUD
 
 SPEC CHECKSUMS:
-  AFNetworking: fefbce9660acb17f48ae0011292d4da0f457bf36
-  AFNetworking-RACExtensions: 501ab1564f5be65e01fe3017cda7bba25764c20d
-  JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
-  Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
-  ReactiveCocoa: eb38dee0a0e698f73a9b25e5c1faea2bb4c79240
-  ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
+  AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
+  AFNetworking-RACExtensions: dd55d08dbfa013b9e118d5c1a5e4b58b63e734e1
+  JSONModel: cbdef0fdff1cc70e913a860861d3072860efd3a1
+  Masonry: 0bc111d6902e3a55ff8423bcbdf7155261806547
+  ReactiveCocoa: 31119068e3dde866bd257cf74e1f06b4023bf387
+  ReactiveViewModel: 512224f801ea0a603fd394eed0f38bc662b64b9a
+  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
+  SVProgressHUD: da7a49e789af645d9279ffbca62318945a832438
 
-COCOAPODS: 0.36.1
+COCOAPODS: 0.35.0

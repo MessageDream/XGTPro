@@ -11,6 +11,8 @@ target 'XGTPro', :exclusive => true do
   pod 'ReactiveViewModel'
   pod 'JSONModel'
   pod 'AFNetworking-RACExtensions'
+  pod 'SDWebImage'
+  pod 'SVProgressHUD'
 end
 
 
