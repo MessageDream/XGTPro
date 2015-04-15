@@ -35,8 +35,8 @@
     //    [self.window makeKeyAndVisible];
     
     //注册极光推送
-    jpush=[JPushNotification sharePushNotification];
-    [jpush applyForPushNotification:launchOptions];
+//    jpush=[JPushNotification sharePushNotification];
+//    [jpush applyForPushNotification:launchOptions];
     
     return YES;
 }

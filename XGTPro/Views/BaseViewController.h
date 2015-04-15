@@ -10,15 +10,12 @@
 #import "ResDefine.h"
 #import "CustomActivityIndicatorView.h"
 #import "TextFiledReturnEditingDelegate.h"
-#import "DataModelDelegate.h"
-#import "User.h"
 
 #define PUSHNOTIFICATIONID @"PUSHNOTIFICATIONID"
 
-@interface BaseViewController : UIViewController<DataModelDelegate,TextFiledReturnEditingDelegate>
+@interface BaseViewController : UIViewController<TextFiledReturnEditingDelegate>
 {
 @protected
-    User *user;
     CustomActivityIndicatorView *customActivityIndicatorView;
     int _lockViewCount;
 

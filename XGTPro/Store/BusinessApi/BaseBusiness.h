@@ -37,6 +37,7 @@ typedef NS_ENUM(NSInteger, BusinessErrorType)
 #import "HttpConnectDelegate.h"
 #import "BaseHttpConnect.h"
 #import "HttpConnectDefineData.h"
+#import "BaseModel.h"
 
 @class BaseBusiness;
 
@@ -57,13 +58,12 @@ typedef NS_ENUM(NSInteger, BusinessErrorType)
     NSInteger _errCode;
     NSString *_errmsg;
     BusinessErrorType _businessErrorType;
-    BaseBusinessHttpConnect *_baseBusinessHttpConnect;
-    
+    BaseHttpConnect *_httpConnect;
 }
 
 @property(nonatomic,weak) id<BusinessProtocol>businessObserver;
 @property(nonatomic)BusinessErrorType businessErrorType;
-@property(nonatomic,strong) BaseHttpConnect * httpConnect;
+@property(nonatomic,strong)BaseModel *resultModel;
 @property(nonatomic,readonly)NSString *errmsg;
 @property(nonatomic,readonly)NSInteger errCode;
 
@@ -75,6 +75,8 @@ typedef NS_ENUM(NSInteger, BusinessErrorType)
 
 
 //获取错误码
-- (void)errorCodeFromResponse:(NSDictionary *)theResponseBody;
+- (void)errorCodeFromResponse:(NSDictionary *)responseBodyDic;
+
+- (void)parseModelFromDic:(NSDictionary *)responseBodyDic;
 @end
 

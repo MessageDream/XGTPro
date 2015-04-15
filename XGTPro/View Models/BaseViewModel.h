@@ -7,16 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DataModelDelegate.h"
-#import "BusinessType.h"
+#import "ViewModelDelegate.h"
 #import "BaseBusiness.h"
-@interface BaseDataModel : NSObject<BusinessProtocol>
+#import <ReactiveViewModel.h>
+@interface BaseViewModel : RVMViewModel<BusinessProtocol>
 {
 @protected
     BaseBusiness *baseBusiness;
 }
-@property(nonatomic,assign)id<DataModelDelegate> observer;
+@property(nonatomic,assign)id<ViewModelDelegate> observer;
 - (void)creatBusinessWithId:(NSInteger)businessId andExecuteWithData:(NSDictionary *)dic;
 - (void)creatBusinessWithId:(NSInteger)businessId andObserver:(id<BusinessProtocol>)observer andExecuteWithData:(NSDictionary *)dic;
-;
 @end

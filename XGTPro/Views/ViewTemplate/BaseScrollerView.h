@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseUIView.h"
+#import "BaseView.h"
 
-@interface BaseScrollerView : BaseUIView
+@interface BaseScrollerView : BaseView
 {
 @protected
     UIScrollView *_scrollerView;

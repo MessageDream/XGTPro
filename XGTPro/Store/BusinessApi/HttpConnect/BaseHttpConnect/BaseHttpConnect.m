@@ -44,8 +44,7 @@ static NSOperationQueue *operationQueue = nil;
     return operationQueue;
 }
 
-- (id)init
-{
+- (id)init{
     if (self = [super init]) {
         _resquestHeads = [[NSMutableDictionary alloc] init];
         _stauts = HttpContentStauts_WillStart;
@@ -99,8 +98,12 @@ static NSOperationQueue *operationQueue = nil;
     return self;
 }
 
--(void)send
-{
+-(void)sendWithParam:(NSDictionary *)param{
+    self.body = param;
+    [self send];
+}
+
+-(void)send{
     if (_stauts == HttpContentStauts_DidStart) {
         return;
     }
@@ -233,8 +236,7 @@ static NSOperationQueue *operationQueue = nil;
     }
 }
 
-- (void)closeConnect
-{
+- (void)closeConnect{
 #ifdef DEBUG_LOG
     NSLog(@"[client operationQueue]  -count - ----->%lu",(unsigned long)[[_operationQueue operations] count]);
     //[DebugManager LogDebug:@"[client operationQueue]  -count - ----->%i",[[[client operationQueue] operations] count]];
@@ -247,8 +249,7 @@ static NSOperationQueue *operationQueue = nil;
 
 
 
--(void)cancel
-{
+-(void)cancel{
     [self closeConnect];
     _stauts = HttpContentStauts_DidStop;
 }
@@ -257,8 +258,7 @@ static NSOperationQueue *operationQueue = nil;
     return data;
 }
 
--(void)dealloc
-{
+-(void)dealloc{
     self.resquestType = nil;
     self.requestPath = nil;
     self.baseUrl=nil;

@@ -37,29 +37,29 @@
     return self;
 }
 
--(void)didDataModelNoticeSucess:(BaseDataModel*)baseDataModel forBusinessType:( BusinessType)businessID{
-    [self unlockViewSubtractCount];
-#ifdef DEBUG_LOG
-    NSLog(@"%d",(int)businessID);
-    NSLog(@"sucess");
-#endif
-}
-
--(void)didDataModelNoticeFail:(BaseDataModel*)baseDataModel forBusinessType:( BusinessType)businessID forErrorCode:(NSInteger)errorCode forErrorMsg:(NSString*)errorMsg{
-    [self unlockViewSubtractCount];
-#ifdef DEBUG_LOG
-    NSLog(@"%d",(int)businessID);
-#endif
-    NSString *error = @"";
-    if(errorMsg==nil)
-        return;
-    error = [error stringByAppendingString:errorMsg];
-    [self showTip:error];
-#ifdef DEBUG_LOG
-    NSLog(@"%@",error);
-#endif
-    
-}
+//-(void)didDataModelNoticeSucess:(BaseDataModel*)baseDataModel forBusinessType:( BusinessType)businessID{
+//    [self unlockViewSubtractCount];
+//#ifdef DEBUG_LOG
+//    NSLog(@"%d",(int)businessID);
+//    NSLog(@"sucess");
+//#endif
+//}
+//
+//-(void)didDataModelNoticeFail:(BaseDataModel*)baseDataModel forBusinessType:( BusinessType)businessID forErrorCode:(NSInteger)errorCode forErrorMsg:(NSString*)errorMsg{
+//    [self unlockViewSubtractCount];
+//#ifdef DEBUG_LOG
+//    NSLog(@"%d",(int)businessID);
+//#endif
+//    NSString *error = @"";
+//    if(errorMsg==nil)
+//        return;
+//    error = [error stringByAppendingString:errorMsg];
+//    [self showTip:error];
+//#ifdef DEBUG_LOG
+//    NSLog(@"%@",error);
+//#endif
+//    
+//}
 
 -(void)createUIActivityIndicatorView{
     customActivityIndicatorView = [[CustomActivityIndicatorView alloc]initWithFrame:[UIScreen mainScreen].bounds];
@@ -121,7 +121,6 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    user=[User shareUser];
     //    [ViewControllerPathManager addViewControllerID:[NSNumber numberWithInt:_viewControllerId]];
     _lockViewCount = 0;
     [self createUIActivityIndicatorView];
@@ -178,7 +177,7 @@
         rect.origin.y=self.view.frame.origin.y+50;
         baseCustomMessageBox.frame=rect;
     }
-    baseCustomMessageBox.tag=MESSAGEBOXTAG;
+    baseCustomMessageBox.tag=10;
     baseCustomMessageBox.animation = YES;
     baseCustomMessageBox.autoCloseTimer = 2;
     [self.view addSubview:baseCustomMessageBox];

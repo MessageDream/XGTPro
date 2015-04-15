@@ -10,8 +10,7 @@
 
 @implementation JsonHttpConnect
 
-- (void)createBaseBussinessHeads
-{
+- (void)createBaseBussinessHeads{
     if (![_resquestHeads objectForKey:HEADER_CONTENT_TYPE_NAME]) {
         [_resquestHeads setObject:HEADER_CONTENT_TYPE_JSON_VALUE forKey:HEADER_CONTENT_TYPE_NAME];
     }
@@ -19,8 +18,7 @@
 }
 
 //创建消息体
-- (void)createBaseBussinessHttpBody:(NSDictionary *)theParam
-{
+- (void)createBaseBussinessHttpBody:(NSDictionary *)theParam{
     self.body=theParam;
     //    if (theParam!=nil) {
     //        if ([self.resquestType isEqualToString:HTTP_REQUEST_POST]) {
@@ -31,8 +29,7 @@
     //    }
 }
 
--(void)setUrlParam:(NSDictionary *)theParam
-{
+-(void)setUrlParam:(NSDictionary *)theParam{
     NSArray *pathcomp=[self.requestPath componentsSeparatedByString:@"?"];
     NSInteger count=theParam.allValues.count;
     NSString *path= self.requestPath;
@@ -60,18 +57,16 @@
 
 - (id)parseHttpConnectResponseData:(NSData *)data{
     NSError * error;
-    if (self.baseBusinessHttpConnect.respones.responesData) {
-        return [NSJSONSerialization JSONObjectWithData:self.baseBusinessHttpConnect.respones.responesData options:NSJSONReadingMutableContainers error:&error];
+    if (data) {
+        return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
     }else{
         return nil;
     }
 }
 
-- (void)sendWithParam:(NSDictionary *)theParam
-{
+- (void)sendWithParam:(NSDictionary *)theParam{
     [self createBaseBussinessHeads];
-    [self createBaseBussinessHttpBody:theParam];
-    [super send];
+    [self send];
 }
 
 

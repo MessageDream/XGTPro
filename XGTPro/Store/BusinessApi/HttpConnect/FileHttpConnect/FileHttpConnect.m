@@ -18,8 +18,7 @@
 @synthesize uploadFilePath = _uploadFilePath;
 @synthesize downloadFilePath = _downloadFilePath;
 
--(id)init
-{
+-(id)init{
     if (self=[super init]) {
          __weak BaseHttpConnect *blockSelf = self;
         _downloadProcess=^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead){
@@ -35,8 +34,7 @@
     return self;
 }
 
--(void)setDownloadFilePath:(NSString *)downloadFilePath
-{
+-(void)setDownloadFilePath:(NSString *)downloadFilePath{
     _downloadFilePath = downloadFilePath;
     if(fileStream==nil)
     {
@@ -229,8 +227,7 @@
 //{
 //    NSLog(@"receive header:%@",allHead);
 //}
--(void)closeConnect
-{
+-(void)closeConnect{
     if(fileStream!=nil)
         [fileStream close];
     [super closeConnect];

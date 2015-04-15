@@ -11,7 +11,6 @@
 
 @interface JsonHttpConnect : BaseHttpConnect
 
-- (void)createBaseBussinessHttpBody:(NSDictionary *)theParam;
 -(void)setUrlParam:(NSDictionary *)theParam;
 - (void)sendWithParam:(NSDictionary *)param;
 @end

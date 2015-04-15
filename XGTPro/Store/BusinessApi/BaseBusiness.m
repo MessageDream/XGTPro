@@ -9,62 +9,61 @@
 #import "BaseBusiness.h"
 #import "JsonHttpConnect.h"
 #import "HttpErrorCodeManager.h"
-#import "NtspHeader.h"
+
+@interface BaseBusiness()
+@property(nonatomic,strong) BaseHttpConnect * httpConnect;
+@end
 
 @implementation BaseBusiness
-@synthesize businessId = _businessId;
+
 @synthesize businessErrorType = _businessErrorType;
-@synthesize baseBusinessHttpConnect = _baseBusinessHttpConnect;
+@synthesize httpConnect = _httpConnect;
 @synthesize errmsg = _errmsg;
 @synthesize errCode = _errCode;
 
-- (id)init
-{
+- (id)init{
     if (self = [super init]) {
-        self.httpConnect = [[JsonHttpConnect alloc] init];
+        _httpConnect = [[JsonHttpConnect alloc] init];
     }
     return self;
 }
 
-- (void)execute:(NSDictionary *)theParm
-{
-    if(theParm!=nil&&[self.baseBusinessHttpConnect.resquestHeads.allValues count]==0)//可能有无参数的情况
+- (void)execute:(NSDictionary *)theParm{
+    if(theParm!=nil&&[self.httpConnect.resquestHeads.allValues count]==0)//可能有无参数的情况
     {
         if (![NSJSONSerialization isValidJSONObject:theParm])
             return;
     }
     
-    if (self.httpConnect) {
-        self.httpConnect.observer = self;
-        [self.httpConnect sendWithParam:theParm];
+    if (_httpConnect) {
+        _httpConnect.observer = self;
+        [_httpConnect sendWithParam:theParm];
     }
 }
 
-- (void)cancel
-{
-    if (self.httpConnect) {
-        [self.httpConnect cancel];
+- (void)cancel{
+    if (_httpConnect) {
+        [_httpConnect cancel];
     }
 }
 
 
 
 //获取错误码
-- (void)errorCodeFromResponse:(NSDictionary *)theResponseBody
-{
-    if (theResponseBody) {
-        if ([theResponseBody isKindOfClass:[NSDictionary class]]) {
+- (void)errorCodeFromResponse:(NSDictionary *)responseBodyDic{
+    if (responseBodyDic) {
+        if ([responseBodyDic isKindOfClass:[NSDictionary class]]) {
             //附加部分，具体根据接口判断
-            if (![theResponseBody objectForKey:@"status"]) {
+            if (![responseBodyDic objectForKey:@"status"]) {
                 _errCode=NO_ERROR;
             }else{
-                _errCode = [[theResponseBody objectForKey:@"status"] integerValue];
+                _errCode = [[responseBodyDic objectForKey:@"status"] integerValue];
                 if (_errCode==10||_errCode==1) {
                     _errCode=NO_ERROR;
                 }
-                _errmsg = [theResponseBody objectForKey:@"error"];
+                _errmsg = [responseBodyDic objectForKey:@"error"];
             }
-            if ([theResponseBody objectForKey:@"result"]&&[[theResponseBody objectForKey:@"result"] intValue]==0) {
+            if ([responseBodyDic objectForKey:@"result"]&&[[responseBodyDic objectForKey:@"result"] intValue]==0) {
                 _errCode=REQUEST_UPDATE_ERROR;
             }
         }
@@ -111,42 +110,40 @@
     }
 }
 
--(void) willHttpConnectRequest:(BaseHttpConnect*)httpContent
-{
+- (void)parseModelFromDic:(NSDictionary *)responseBodyDic{
+
+}
+
+-(void) willHttpConnectRequest:(BaseHttpConnect*)httpContent{
    
 }
 
--(void) httpConnectResponse:(BaseHttpConnect*)httpContent GetByteCount:(NSInteger)byteCount
-{
-}
-
--(void)didGetHttpConnectResponseHead:(NSDictionary*)allHead
-{
+-(void) httpConnectResponse:(BaseHttpConnect*)httpContent GetByteCount:(NSInteger)byteCount{
     
 }
 
--(void)httpConnectResponse:(BaseHttpConnect *)httpContent getByteCount:(NSInteger)byteCount
-{
+-(void)didGetHttpConnectResponseHead:(NSDictionary*)allHead{
     
 }
 
--(void)httpConnectResponse:(BaseHttpConnect *)httpContent uploadByteCount:(NSInteger)byteCount
-{
+-(void)httpConnectResponse:(BaseHttpConnect *)httpContent getByteCount:(NSInteger)byteCount{
     
 }
 
--(void) didHttpConnectError:(enum HttpErrorCode)errorCode
-{
-    if (self.businessObserver)
-    {
-        _errmsg = [HttpErrorCodeManager getDesFromErrorCode:errorCode];
+-(void)httpConnectResponse:(BaseHttpConnect *)httpContent uploadByteCount:(NSInteger)byteCount{
+    
+}
+
+-(void) didHttpConnectError:(enum HttpErrorCode)errorCode{
+    _errCode = errorCode;
+    _errmsg = [HttpErrorCodeManager getDesFromErrorCode:errorCode];
+    if (self.businessObserver && [self.businessObserver respondsToSelector:@selector(didBusinessError:)]){
         [self.businessObserver didBusinessError:self];
     }
 }
 
--(void) didHttpConnectFinish:(BaseHttpConnect *)httpContent
-{
-    NSDictionary * responseBodyDic = httpContent.respones.responseBody;
+-(void) didHttpConnectFinish:(BaseHttpConnect *)httpContent{
+    NSDictionary * responseBodyDic = httpContent.respones.responesBody;
     
 #ifdef DEBUG_LOG
     NSLog(@"rece:%@",responseBodyDic);
@@ -154,16 +151,20 @@
     if (responseBodyDic) {
         [self errorCodeFromResponse:responseBodyDic];
         if(_errCode != REQUEST_NOERROR){
-            [self.businessObserver didBusinessError:self];
+            if (self.businessObserver && [self.businessObserver respondsToSelector:@selector(didBusinessError:)]){
+                [self.businessObserver didBusinessError:self];
+            }
             return;
         }
+        [self parseModelFromDic:responseBodyDic];
     }
-    [self.businessObserver didBusinessSucess:self withData:responseBodyDic];
+    if (self.businessObserver && [self.businessObserver respondsToSelector:@selector(didBusinessSucess:withData:)]){
+        [self.businessObserver didBusinessSucess:self withData:responseBodyDic];
+    }
 }
 
 
--(void)dealloc
-{
-    self.baseBusinessHttpConnect.observer = nil;
+-(void)dealloc{
+    self.httpConnect.observer = nil;
 }
 @end

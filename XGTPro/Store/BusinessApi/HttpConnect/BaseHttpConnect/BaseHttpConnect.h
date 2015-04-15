@@ -71,6 +71,7 @@ typedef NS_ENUM(NSUInteger , HttpContentStauts){
 @property(nonatomic,readonly)AFHTTPRequestOperation *requestOperation;
 @property(nonatomic,weak)id<HttpConnectDelegate> observer;
 
+-(void)sendWithParam:(NSDictionary *)param;
 -(void)send;
 -(void)cancel;
 - (void)closeConnect;

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ResDefine.h"
+#import "MainStyle.h"
 #import "Masonry.h"
 
 @interface BaseView : UIView

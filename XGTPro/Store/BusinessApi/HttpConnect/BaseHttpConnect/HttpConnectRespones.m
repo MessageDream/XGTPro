@@ -15,6 +15,6 @@
 -(void)dealloc
 {
     self.responesHead = nil;
-    self.responesData = nil;
+    self.responesBody = nil;
 }
 @end
