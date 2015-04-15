@@ -107,6 +107,7 @@
 		B271F9D31ADE294100B6C880 /* BusinessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B271F9D21ADE294100B6C880 /* BusinessManager.m */; };
 		B271F9D61ADE474000B6C880 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B271F9D51ADE474000B6C880 /* BaseModel.m */; };
 		B271F9D91ADE5A2900B6C880 /* BaseBusiness+Rac.m in Sources */ = {isa = PBXBuildFile; fileRef = B271F9D81ADE5A2900B6C880 /* BaseBusiness+Rac.m */; };
+		B271FA111ADE7F7400B6C880 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B271FA0F1ADE7F7400B6C880 /* Main.storyboard */; };
 		B2C74E9E1ADD03E8002C5C3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C74E9D1ADD03E8002C5C3C /* Images.xcassets */; };
 		B2C74EA71ADD0475002C5C3C /* BaseBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C74EA21ADD0475002C5C3C /* BaseBusiness.m */; };
 		B2C74EA81ADD0475002C5C3C /* FormMltipart.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C74EA61ADD0475002C5C3C /* FormMltipart.m */; };
@@ -308,6 +309,7 @@
 		B271F9D51ADE474000B6C880 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		B271F9D71ADE5A2900B6C880 /* BaseBusiness+Rac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseBusiness+Rac.h"; sourceTree = "<group>"; };
 		B271F9D81ADE5A2900B6C880 /* BaseBusiness+Rac.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseBusiness+Rac.m"; sourceTree = "<group>"; };
+		B271FA101ADE7F7400B6C880 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2C74E9D1ADD03E8002C5C3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B2C74EA11ADD0475002C5C3C /* BaseBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseBusiness.h; sourceTree = "<group>"; };
 		B2C74EA21ADD0475002C5C3C /* BaseBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseBusiness.m; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 				B2339F871ADCC64700844088 /* AppDelegate.h */,
 				B2339F881ADCC64700844088 /* AppDelegate.m */,
 				B2339F701ADCC5E900844088 /* LaunchScreen.xib */,
+				B271FA0F1ADE7F7400B6C880 /* Main.storyboard */,
 				B271F99E1ADE1D5300B6C880 /* Views */,
 				B271F99D1ADE1D5300B6C880 /* View Models */,
 				B271F9C01ADE1E5E00B6C880 /* Models */,
@@ -1152,6 +1155,7 @@
 				B233A1671ADCC64700844088 /* AssetsPickerLocked@2x.png in Resources */,
 				B233A12B1ADCC64700844088 /* criminal.m4r in Resources */,
 				B2C74E9E1ADD03E8002C5C3C /* Images.xcassets in Resources */,
+				B271FA111ADE7F7400B6C880 /* Main.storyboard in Resources */,
 				B233A16D1ADCC64700844088 /* OK.png in Resources */,
 				B233A1231ADCC64700844088 /* 06.m4r in Resources */,
 				B233A1661ADCC64700844088 /* AssetsPickerChecked~iOS6@2x.png in Resources */,
@@ -1315,6 +1319,14 @@
 				B2339F711ADCC5E900844088 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		B271FA0F1ADE7F7400B6C880 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B271FA101ADE7F7400B6C880 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
