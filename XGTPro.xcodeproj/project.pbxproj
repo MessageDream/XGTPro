@@ -71,6 +71,7 @@
 		B2C74EBC1ADD07D0002C5C3C /* HttpErrorCodeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C74EB21ADD07D0002C5C3C /* HttpErrorCodeManager.m */; };
 		B2C74EBD1ADD07D0002C5C3C /* FileHttpConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C74EB51ADD07D0002C5C3C /* FileHttpConnect.m */; };
 		B2C74EBE1ADD07D0002C5C3C /* JsonHttpConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C74EB91ADD07D0002C5C3C /* JsonHttpConnect.m */; };
+		B2E24F451AE013F1003E0116 /* UserLoginBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E24F441AE013F1003E0116 /* UserLoginBusiness.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,6 +206,9 @@
 		B2C74EB71ADD07D0002C5C3C /* HttpConnectDefineData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpConnectDefineData.h; sourceTree = "<group>"; };
 		B2C74EB81ADD07D0002C5C3C /* JsonHttpConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonHttpConnect.h; sourceTree = "<group>"; };
 		B2C74EB91ADD07D0002C5C3C /* JsonHttpConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonHttpConnect.m; sourceTree = "<group>"; };
+		B2E24F411AE007CA003E0116 /* BusinessNameDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusinessNameDefine.h; sourceTree = "<group>"; };
+		B2E24F431AE013F1003E0116 /* UserLoginBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserLoginBusiness.h; path = UserLoginBusiness/UserLoginBusiness.h; sourceTree = "<group>"; };
+		B2E24F441AE013F1003E0116 /* UserLoginBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserLoginBusiness.m; path = UserLoginBusiness/UserLoginBusiness.m; sourceTree = "<group>"; };
 		DD7C0904189E4FD7C30F0068 /* Pods-XGTPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XGTPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XGTPro/Pods-XGTPro.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -580,8 +584,10 @@
 		B2C74EA01ADD0475002C5C3C /* BusinessApi */ = {
 			isa = PBXGroup;
 			children = (
+				B2E24F421AE013D6003E0116 /* UserLoginBusiness */,
 				B271F9D11ADE294100B6C880 /* BusinessManager.h */,
 				B271F9D21ADE294100B6C880 /* BusinessManager.m */,
+				B2E24F411AE007CA003E0116 /* BusinessNameDefine.h */,
 				B2C74EA11ADD0475002C5C3C /* BaseBusiness.h */,
 				B2C74EA21ADD0475002C5C3C /* BaseBusiness.m */,
 				B271F9D71ADE5A2900B6C880 /* BaseBusiness+Rac.h */,
@@ -649,6 +655,15 @@
 				B2C74EB91ADD07D0002C5C3C /* JsonHttpConnect.m */,
 			);
 			path = JsonHttpConnect;
+			sourceTree = "<group>";
+		};
+		B2E24F421AE013D6003E0116 /* UserLoginBusiness */ = {
+			isa = PBXGroup;
+			children = (
+				B2E24F431AE013F1003E0116 /* UserLoginBusiness.h */,
+				B2E24F441AE013F1003E0116 /* UserLoginBusiness.m */,
+			);
+			name = UserLoginBusiness;
 			sourceTree = "<group>";
 		};
 		B4EB2E6C27862608BE6787F5 /* Frameworks */ = {
@@ -842,6 +857,7 @@
 				B271F9D31ADE294100B6C880 /* BusinessManager.m in Sources */,
 				B233A1331ADCC64700844088 /* CustomAlertView.m in Sources */,
 				B233A14B1ADCC64700844088 /* CustomPlaceHolderTextField.m in Sources */,
+				B2E24F451AE013F1003E0116 /* UserLoginBusiness.m in Sources */,
 				B233A1381ADCC64700844088 /* BaseCustomMessageBox.m in Sources */,
 				B233A1771ADCC64700844088 /* PushNotification.m in Sources */,
 				B233A1311ADCC64700844088 /* CustomActivityIndicatorView.m in Sources */,
