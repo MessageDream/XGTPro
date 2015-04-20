@@ -11,6 +11,8 @@
 #import "CustomActivityIndicatorView.h"
 #import "TextFiledReturnEditingDelegate.h"
 
+@class BaseViewModel;
+
 #define PUSHNOTIFICATIONID @"PUSHNOTIFICATIONID"
 
 @interface BaseViewController : UIViewController<TextFiledReturnEditingDelegate>
@@ -22,6 +24,7 @@
 }
 @property(nonatomic,readonly)int lockViewCount;
 @property(nonatomic,assign)UIInterfaceOrientation orientation;
+@property(nonatomic,strong)BaseViewModel *viewModel;
 
 -(void)destroyDataBeforeDealloc;
 -(void)lockView;

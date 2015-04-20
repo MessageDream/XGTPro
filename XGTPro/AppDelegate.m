@@ -18,10 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [application setStatusBarStyle:UIStatusBarStyleLightContent];
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+//    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    // Override point for customization after application launch.
+//    self.window.backgroundColor = [UIColor whiteColor];
     
     //    //建立根Node，然后建立第一个显示的UIViewController
     //    RootViewController *rootViewController=  [[RootViewController alloc] initWithLaunchOptions:launchOptions];

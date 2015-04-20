@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BusinessManager : NSObject
+@class RACSignal;
 
+@interface BusinessManager : NSObject
++(RACSignal *)excuteWithBusinessName:(NSString *)businessName andParameters:(NSDictionary *)param;
 @end

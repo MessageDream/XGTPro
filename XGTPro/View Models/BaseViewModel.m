@@ -7,13 +7,13 @@
 //
 
 #import "BaseViewModel.h"
-//#import "BusinessFactory.h"
+#import "BusinessManager.h"
 
 @implementation BaseViewModel
 
-- (void)creatBusinessWithId:(NSInteger)businessId andExecuteWithData:(NSDictionary *)dic
+- (RACSignal *)creatBusinessWithName:(NSString *)businessName andExecuteWithData:(NSDictionary *)dic;
 {
-    [self creatBusinessWithId:businessId andObserver:self andExecuteWithData:dic];
+    return  [BusinessManager excuteWithBusinessName:businessName andParameters:dic];
 }
 
 - (void)creatBusinessWithId:(NSInteger)businessId andObserver:(id<BusinessProtocol>)observer andExecuteWithData:(NSDictionary *)dic

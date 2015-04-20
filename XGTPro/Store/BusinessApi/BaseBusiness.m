@@ -110,8 +110,8 @@
     }
 }
 
-- (void)parseModelFromDic:(NSDictionary *)responseBodyDic{
-
+- (BaseModel *)parseModelFromDic:(NSDictionary *)responseBodyDic{
+    return nil;
 }
 
 -(void) willHttpConnectRequest:(BaseHttpConnect*)httpContent{

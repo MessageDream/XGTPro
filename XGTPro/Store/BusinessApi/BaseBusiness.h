@@ -77,6 +77,6 @@ typedef NS_ENUM(NSInteger, BusinessErrorType)
 //获取错误码
 - (void)errorCodeFromResponse:(NSDictionary *)responseBodyDic;
 
-- (void)parseModelFromDic:(NSDictionary *)responseBodyDic;
+- (BaseModel *)parseModelFromDic:(NSDictionary *)responseBodyDic;
 @end
 
