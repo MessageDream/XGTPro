@@ -17,22 +17,19 @@
 
 @implementation UserLoginViewController
 
--(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        self.viewModel = [[UserLoginViewModel alloc] init];
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.viewModel = [[UserLoginViewModel alloc] init];
     @weakify(self)
     self.loginButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         @strongify(self)
-        return [[[((UserLoginViewModel *) self.viewModel) loginWithUserName:@"user" andPwd:@"password"] doError:^(NSError *error) {
-            
+        return [[[[((UserLoginViewModel *) self.viewModel) loginWithUserName:@"user" andPwd:@"password"] doError:^(NSError *error) {
+            NSLog(@"%@",[error.userInfo objectForKey:@"msg"]);
+        }] doNext:^(id x) {
+            NSLog(@"1232321344%@",x);
         }] doCompleted:^{
-            
+            NSLog(@"complete");
         }];
     }];
     // Do any additional setup after loading the view.

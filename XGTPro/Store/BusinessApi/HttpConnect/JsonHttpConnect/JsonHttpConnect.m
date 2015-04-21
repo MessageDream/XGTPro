@@ -66,6 +66,7 @@
 
 - (void)sendWithParam:(NSDictionary *)theParam{
     [self createBaseBussinessHeads];
+    [self createBaseBussinessHttpBody:theParam];
     [self send];
 }
 

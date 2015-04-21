@@ -14,8 +14,6 @@ typedef NS_ENUM(NSInteger, BusinessErrorType)
     //    204	参数错误。
     //    8001	令牌失效
 
- 
-    
     REQUEST_USER_ERROR=0,
     REQUEST_NOERROR=1,
     REQUEST_VERYCODE_ERROR= 2, //验证码不正确
@@ -47,9 +45,9 @@ typedef NS_ENUM(NSInteger, BusinessErrorType)
 
 @protocol BusinessProtocol <NSObject>
 
-- (void)didBusinessSucess:(BaseBusiness *)business withData:(NSDictionary*)businessData;
+- (void)didBusinessSucessWithModel:(BaseModel*)model;
 - (void)didBusinessFail;
-- (void)didBusinessError:(BaseBusiness *)business;
+- (void)didBusinessErrorWithCode:(NSInteger)code andMsg:(NSString *)msg;
 @end
 
 @interface BaseBusiness : NSObject<HttpConnectDelegate>
@@ -78,5 +76,7 @@ typedef NS_ENUM(NSInteger, BusinessErrorType)
 - (void)errorCodeFromResponse:(NSDictionary *)responseBodyDic;
 
 - (BaseModel *)parseModelFromDic:(NSDictionary *)responseBodyDic;
+
+- (void)handleBusinessError;
 @end
 

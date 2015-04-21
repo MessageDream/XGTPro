@@ -16,19 +16,12 @@
 #define PUSHNOTIFICATIONID @"PUSHNOTIFICATIONID"
 
 @interface BaseViewController : UIViewController<TextFiledReturnEditingDelegate>
-{
-@protected
-    CustomActivityIndicatorView *customActivityIndicatorView;
-    int _lockViewCount;
 
-}
-@property(nonatomic,readonly)int lockViewCount;
 @property(nonatomic,assign)UIInterfaceOrientation orientation;
 @property(nonatomic,strong)BaseViewModel *viewModel;
 
 -(void)destroyDataBeforeDealloc;
 -(void)lockView;
--(BOOL)lockViewAddCount;
 -(BOOL)unlockViewSubtractCount;
 -(CGRect)createViewFrame;
 -(void)sendShowTabBarMessage;

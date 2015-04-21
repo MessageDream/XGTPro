@@ -19,24 +19,39 @@
                                                  fromProtocol:@protocol(HttpConnectDelegate)] flattenMap:^RACStream *(id value) {
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             @strongify(self)
-            NSError *error = [NSError errorWithDomain:nil code:self.errCode userInfo:@{@"msg":self.errmsg}];
+            NSError *error = [NSError errorWithDomain:@"" code:self.errCode userInfo:@{@"msg":self.errmsg}];
             [subscriber sendError:error];
-            return [RACDisposable disposableWithBlock:nil];
+            return [RACDisposable disposableWithBlock:^{
+                
+            }];
         }];
     }];
+    
+    RACSignal *didHttpConnectHandleBusinessError = [[self rac_signalForSelector:@selector(handleBusinessError)] flattenMap:^RACStream *(id value) {
         
-    RACSignal *didHttpConnectFinish = [[self rac_signalForSelector:@selector(didHttpConnectFinish:)
-                                                      fromProtocol:@protocol(HttpConnectDelegate)]  flattenMap:^RACStream *(id value) {
+        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            @strongify(self)
+            NSError *error = [NSError errorWithDomain:@"" code:self.errCode userInfo:@{@"msg":self.errmsg}];
+            [subscriber sendError:error];
+            return [RACDisposable disposableWithBlock:^{
+                
+            }];
+        }];
+    }];
+    
+    RACSignal *didHttpConnectParseModel = [[self rac_signalForSelector:@selector(parseModelFromDic:)] flattenMap:^RACStream *(id value) {
         
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             @strongify(self)
             [subscriber sendNext:self.resultModel];
             [subscriber sendCompleted];
-            return [RACDisposable disposableWithBlock:nil];
+            return [RACDisposable disposableWithBlock:^{
+                
+            }];
         }];
     }];
         
-    signal = [RACSignal merge:@[didHttpConnectError, didHttpConnectFinish]];
+    signal = [RACSignal merge:@[didHttpConnectError,didHttpConnectHandleBusinessError, didHttpConnectParseModel]];
     
     objc_setAssociatedObject(self, _cmd, signal, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     return signal;

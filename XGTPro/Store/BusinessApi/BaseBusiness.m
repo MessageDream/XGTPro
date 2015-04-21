@@ -114,6 +114,12 @@
     return nil;
 }
 
+- (void)handleBusinessError{
+    if (self.businessObserver && [self.businessObserver respondsToSelector:@selector(didBusinessErrorWithCode:andMsg:)]){
+        [self.businessObserver didBusinessErrorWithCode:_errCode andMsg:_errmsg];
+    }
+}
+
 -(void) willHttpConnectRequest:(BaseHttpConnect*)httpContent{
    
 }
@@ -137,8 +143,8 @@
 -(void) didHttpConnectError:(enum HttpErrorCode)errorCode{
     _errCode = errorCode;
     _errmsg = [HttpErrorCodeManager getDesFromErrorCode:errorCode];
-    if (self.businessObserver && [self.businessObserver respondsToSelector:@selector(didBusinessError:)]){
-        [self.businessObserver didBusinessError:self];
+    if (self.businessObserver && [self.businessObserver respondsToSelector:@selector(didBusinessErrorWithCode:andMsg:)]){
+        [self.businessObserver didBusinessErrorWithCode:_errCode andMsg:_errmsg];
     }
 }
 
@@ -151,15 +157,13 @@
     if (responseBodyDic) {
         [self errorCodeFromResponse:responseBodyDic];
         if(_errCode != REQUEST_NOERROR){
-            if (self.businessObserver && [self.businessObserver respondsToSelector:@selector(didBusinessError:)]){
-                [self.businessObserver didBusinessError:self];
-            }
+            [self handleBusinessError];
             return;
         }
-        [self parseModelFromDic:responseBodyDic];
+       self.resultModel = [self parseModelFromDic:responseBodyDic];
     }
-    if (self.businessObserver && [self.businessObserver respondsToSelector:@selector(didBusinessSucess:withData:)]){
-        [self.businessObserver didBusinessSucess:self withData:responseBodyDic];
+    if (self.businessObserver && [self.businessObserver respondsToSelector:@selector(didBusinessSucessWithModel:)]){
+        [self.businessObserver didBusinessSucessWithModel:self.resultModel];
     }
 }
 
