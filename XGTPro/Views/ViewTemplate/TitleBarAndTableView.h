@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TitleBarAndScrollerView.h"
+#import "BaseView.h"
 
-@interface TitleBarAndTableView : TitleBarAndScrollerView
+@interface TitleBarAndTableView : BaseView
 {
 @protected
     UITableView *_tableView;

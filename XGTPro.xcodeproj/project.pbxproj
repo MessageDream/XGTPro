@@ -54,7 +54,6 @@
 		B271F9B91ADE1D5300B6C880 /* MainStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B271F9A41ADE1D5300B6C880 /* MainStyle.m */; };
 		B271F9BA1ADE1D5300B6C880 /* BaseScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B271F9A81ADE1D5300B6C880 /* BaseScrollerView.m */; };
 		B271F9BC1ADE1D5300B6C880 /* TitleBarAndPullRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B271F9AC1ADE1D5300B6C880 /* TitleBarAndPullRefreshTableView.m */; };
-		B271F9BD1ADE1D5300B6C880 /* TitleBarAndScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B271F9AE1ADE1D5300B6C880 /* TitleBarAndScrollerView.m */; };
 		B271F9BE1ADE1D5300B6C880 /* TitleBarAndTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B271F9B01ADE1D5300B6C880 /* TitleBarAndTableView.m */; };
 		B271F9BF1ADE1D5300B6C880 /* TitleBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B271F9B21ADE1D5300B6C880 /* TitleBarView.m */; };
 		B271F9CB1ADE1E6B00B6C880 /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B271F9C21ADE1E6B00B6C880 /* BaseViewModel.m */; };
@@ -62,6 +61,7 @@
 		B271F9D61ADE474000B6C880 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B271F9D51ADE474000B6C880 /* BaseModel.m */; };
 		B271F9D91ADE5A2900B6C880 /* BaseBusiness+Rac.m in Sources */ = {isa = PBXBuildFile; fileRef = B271F9D81ADE5A2900B6C880 /* BaseBusiness+Rac.m */; };
 		B271FA111ADE7F7400B6C880 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B271FA0F1ADE7F7400B6C880 /* Main.storyboard */; };
+		B27E25A31AE688B000E4FC07 /* TitleBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B27E25A21AE688B000E4FC07 /* TitleBarView.xib */; };
 		B2A425161AE534C1003EA1E1 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A425151AE534C1003EA1E1 /* UserModel.m */; };
 		B2A4251A1AE53521003EA1E1 /* UserLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A425191AE53521003EA1E1 /* UserLoginViewModel.m */; };
 		B2C74E9E1ADD03E8002C5C3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C74E9D1ADD03E8002C5C3C /* Images.xcassets */; };
@@ -172,8 +172,6 @@
 		B271F9A81ADE1D5300B6C880 /* BaseScrollerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseScrollerView.m; sourceTree = "<group>"; };
 		B271F9AB1ADE1D5300B6C880 /* TitleBarAndPullRefreshTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleBarAndPullRefreshTableView.h; sourceTree = "<group>"; };
 		B271F9AC1ADE1D5300B6C880 /* TitleBarAndPullRefreshTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleBarAndPullRefreshTableView.m; sourceTree = "<group>"; };
-		B271F9AD1ADE1D5300B6C880 /* TitleBarAndScrollerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleBarAndScrollerView.h; sourceTree = "<group>"; };
-		B271F9AE1ADE1D5300B6C880 /* TitleBarAndScrollerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleBarAndScrollerView.m; sourceTree = "<group>"; };
 		B271F9AF1ADE1D5300B6C880 /* TitleBarAndTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleBarAndTableView.h; sourceTree = "<group>"; };
 		B271F9B01ADE1D5300B6C880 /* TitleBarAndTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleBarAndTableView.m; sourceTree = "<group>"; };
 		B271F9B11ADE1D5300B6C880 /* TitleBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleBarView.h; sourceTree = "<group>"; };
@@ -188,6 +186,7 @@
 		B271F9D71ADE5A2900B6C880 /* BaseBusiness+Rac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseBusiness+Rac.h"; sourceTree = "<group>"; };
 		B271F9D81ADE5A2900B6C880 /* BaseBusiness+Rac.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseBusiness+Rac.m"; sourceTree = "<group>"; };
 		B271FA101ADE7F7400B6C880 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B27E25A21AE688B000E4FC07 /* TitleBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleBarView.xib; sourceTree = "<group>"; };
 		B2A425141AE534C1003EA1E1 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		B2A425151AE534C1003EA1E1 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		B2A425181AE53521003EA1E1 /* UserLoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserLoginViewModel.h; path = UserLoginViewModel/UserLoginViewModel.h; sourceTree = "<group>"; };
@@ -550,12 +549,11 @@
 				B271F9A81ADE1D5300B6C880 /* BaseScrollerView.m */,
 				B271F9AB1ADE1D5300B6C880 /* TitleBarAndPullRefreshTableView.h */,
 				B271F9AC1ADE1D5300B6C880 /* TitleBarAndPullRefreshTableView.m */,
-				B271F9AD1ADE1D5300B6C880 /* TitleBarAndScrollerView.h */,
-				B271F9AE1ADE1D5300B6C880 /* TitleBarAndScrollerView.m */,
 				B271F9AF1ADE1D5300B6C880 /* TitleBarAndTableView.h */,
 				B271F9B01ADE1D5300B6C880 /* TitleBarAndTableView.m */,
 				B271F9B11ADE1D5300B6C880 /* TitleBarView.h */,
 				B271F9B21ADE1D5300B6C880 /* TitleBarView.m */,
+				B27E25A21AE688B000E4FC07 /* TitleBarView.xib */,
 			);
 			path = ViewTemplate;
 			sourceTree = "<group>";
@@ -795,6 +793,7 @@
 				B233A12B1ADCC64700844088 /* criminal.m4r in Resources */,
 				B2C74E9E1ADD03E8002C5C3C /* Images.xcassets in Resources */,
 				B271FA111ADE7F7400B6C880 /* Main.storyboard in Resources */,
+				B27E25A31AE688B000E4FC07 /* TitleBarView.xib in Resources */,
 				B233A1231ADCC64700844088 /* 06.m4r in Resources */,
 				B233A12E1ADCC64700844088 /* StringDescribe.strings in Resources */,
 				B233A12D1ADCC64700844088 /* What_are_words.m4r in Resources */,
@@ -870,7 +869,6 @@
 				B2D382AA1AE53D7D00FC27DA /* UserLoginViewController.m in Sources */,
 				B2C74EBD1ADD07D0002C5C3C /* FileHttpConnect.m in Sources */,
 				B2A4251A1AE53521003EA1E1 /* UserLoginViewModel.m in Sources */,
-				B271F9BD1ADE1D5300B6C880 /* TitleBarAndScrollerView.m in Sources */,
 				B233A14E1ADCC64700844088 /* CustomTitleBar.m in Sources */,
 				B233A14D1ADCC64700844088 /* CustomTextView.m in Sources */,
 				B233A13D1ADCC64700844088 /* CustomPullRefreshView.m in Sources */,

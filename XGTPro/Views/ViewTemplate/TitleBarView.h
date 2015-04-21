@@ -18,5 +18,6 @@
 }
 @property(nonatomic,readonly)CustomTitleBar *customTitleBar;
 @property (nonatomic,assign)id<CustomTitleBar_ButtonDelegate>delegate_soon;
+@property (strong, nonatomic) IBOutlet CustomTitleBar *navigationBar;
 
 @end

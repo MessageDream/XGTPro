@@ -8,12 +8,15 @@
 
 #import "TitleBarView.h"
 #import "ImageUtils.h"
+#import "XXNibBridge.h"
 
+@interface TitleBarView () <XXNibBridge>
+
+@end
 @implementation TitleBarView
 @synthesize customTitleBar = _customTitleBar;
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
@@ -36,10 +39,14 @@
     }
     return self;
 }
--(void)setDelegate_soon:(id<CustomTitleBar_ButtonDelegate>)delegate_soon
-{
+-(void)setDelegate_soon:(id<CustomTitleBar_ButtonDelegate>)delegate_soon{
     [_customTitleBar.leftButton addTarget:delegate_soon action:@selector(leftButton_onClick:) forControlEvents:UIControlEventTouchUpInside];
     [_customTitleBar.rightButton addTarget:delegate_soon action:@selector(rightButton_onClick:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)awakeFromNib{
+//    [[NSBundle mainBundle] loadNibNamed:@"TitleBarView" owner:self options:nil];
+//    [self addSubview:self.navigationBar];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -15,22 +15,14 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
-        [_scrollerView removeFromSuperview];
-        _scrollerView = nil;
+
     }
     return self;
 }
-- (id)initWithFrame:(CGRect)frame tableViewStyle:(UITableViewStyle)style
-{
-    self = [self initWithFrame:frame];
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, _customTitleBar.frame.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-_customTitleBar.bounds.size.height-20) style:style];
-    _tableView.backgroundColor = [UIColor clearColor];
-    _tableView.scrollEnabled = YES;
-    _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
-    self.activeKeyboardControlOfScrollView = _tableView;
-    [self addSubview:_tableView];
-    
+- (id)initWithFrame:(CGRect)frame tableViewStyle:(UITableViewStyle)style{
+    if(self = [self initWithFrame:frame]){
+        
+    }
     return self;
 }
 
