@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "ResDefine.h"
-#import "CustomActivityIndicatorView.h"
 #import "TextFiledReturnEditingDelegate.h"
 
 @class BaseViewModel;

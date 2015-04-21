@@ -25,6 +25,7 @@
     @weakify(self)
     self.loginButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         @strongify(self)
+        [self lockViewWithStatus:@"正在登陆。。。"];
         return [[[[self.loginViewModel loginWithUserName:@"user" andPwd:@"password"] doError:^(NSError *error) {
             NSLog(@"%@",error.userInfo.allValues[0]);
         }] doNext:^(id x) {

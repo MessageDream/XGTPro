@@ -49,6 +49,9 @@
         @strongify(self)
         [self unlockViewSubtractCount];
     }];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    [SVProgressHUD setBackgroundColor:[UIColor colorWithWhite:0.3 alpha:0.8]];
+    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
 }
 
 //-(void)didDataModelNoticeSucess:(BaseDataModel*)baseDataModel forBusinessType:( BusinessType)businessID{

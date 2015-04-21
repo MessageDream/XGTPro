@@ -26,7 +26,6 @@
 		B233A12C1ADCC64700844088 /* I_need_a_doctor.m4r in Resources */ = {isa = PBXBuildFile; fileRef = B233A0141ADCC64700844088 /* I_need_a_doctor.m4r */; };
 		B233A12D1ADCC64700844088 /* What_are_words.m4r in Resources */ = {isa = PBXBuildFile; fileRef = B233A0151ADCC64700844088 /* What_are_words.m4r */; };
 		B233A12E1ADCC64700844088 /* StringDescribe.strings in Resources */ = {isa = PBXBuildFile; fileRef = B233A0161ADCC64700844088 /* StringDescribe.strings */; };
-		B233A1311ADCC64700844088 /* CustomActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B233A0201ADCC64700844088 /* CustomActivityIndicatorView.m */; };
 		B233A1321ADCC64700844088 /* ButtonListAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B233A0241ADCC64700844088 /* ButtonListAlertView.m */; };
 		B233A1331ADCC64700844088 /* CustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B233A0261ADCC64700844088 /* CustomAlertView.m */; };
 		B233A1341ADCC64700844088 /* CustomArticleAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B233A0291ADCC64700844088 /* CustomArticleAlertView.m */; };
@@ -114,8 +113,6 @@
 		B233A0141ADCC64700844088 /* I_need_a_doctor.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = I_need_a_doctor.m4r; sourceTree = "<group>"; };
 		B233A0151ADCC64700844088 /* What_are_words.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = What_are_words.m4r; sourceTree = "<group>"; };
 		B233A0161ADCC64700844088 /* StringDescribe.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = StringDescribe.strings; sourceTree = "<group>"; };
-		B233A01F1ADCC64700844088 /* CustomActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomActivityIndicatorView.h; sourceTree = "<group>"; };
-		B233A0201ADCC64700844088 /* CustomActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomActivityIndicatorView.m; sourceTree = "<group>"; };
 		B233A0231ADCC64700844088 /* ButtonListAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonListAlertView.h; sourceTree = "<group>"; };
 		B233A0241ADCC64700844088 /* ButtonListAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonListAlertView.m; sourceTree = "<group>"; };
 		B233A0251ADCC64700844088 /* CustomAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAlertView.h; sourceTree = "<group>"; };
@@ -357,7 +354,6 @@
 		B233A0171ADCC64700844088 /* UICustomView */ = {
 			isa = PBXGroup;
 			children = (
-				B233A01E1ADCC64700844088 /* CustomActivityIndicatorView */,
 				B233A0211ADCC64700844088 /* CustomAlertView */,
 				B233A0271ADCC64700844088 /* CustomArticleAlertView */,
 				B233A02D1ADCC64700844088 /* CustomImageZoomView */,
@@ -371,15 +367,6 @@
 				B233A0A11ADCC64700844088 /* UIHyperlinksButton */,
 			);
 			path = UICustomView;
-			sourceTree = "<group>";
-		};
-		B233A01E1ADCC64700844088 /* CustomActivityIndicatorView */ = {
-			isa = PBXGroup;
-			children = (
-				B233A01F1ADCC64700844088 /* CustomActivityIndicatorView.h */,
-				B233A0201ADCC64700844088 /* CustomActivityIndicatorView.m */,
-			);
-			path = CustomActivityIndicatorView;
 			sourceTree = "<group>";
 		};
 		B233A0211ADCC64700844088 /* CustomAlertView */ = {
@@ -902,7 +889,6 @@
 				B2E24F451AE013F1003E0116 /* UserLoginBusiness.m in Sources */,
 				B233A1381ADCC64700844088 /* BaseCustomMessageBox.m in Sources */,
 				B233A1771ADCC64700844088 /* PushNotification.m in Sources */,
-				B233A1311ADCC64700844088 /* CustomActivityIndicatorView.m in Sources */,
 				B233A1791ADCC64700844088 /* StringUtils.m in Sources */,
 				B271F9BE1ADE1D5300B6C880 /* TitleBarAndTableView.m in Sources */,
 				B271F9B81ADE1D5300B6C880 /* BaseViewController.m in Sources */,

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--User Login View Controller-->
@@ -17,14 +18,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ex2-sd-LIW">
-                                <rect key="frame" x="179" y="293" width="96" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ex2-sd-LIW">
+                                <rect key="frame" x="26" y="420" width="548" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="biA-Av-cvE"/>
+                                </constraints>
                                 <state key="normal" title="登陆">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFY-Nb-z8f">
+                                <rect key="frame" x="26" y="99" width="548" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7yc-Ow-79h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hiT-Xp-PRd">
+                                <rect key="frame" x="26" y="175" width="548" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="SMK-dg-AAN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="SMK-dg-AAN"/>
+                                    </mask>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.44799387730000001" green="1" blue="0.38432825209999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ex2-sd-LIW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="4bt-jK-xYP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fFY-Nb-z8f" secondAttribute="trailing" constant="10" id="Cdk-sx-x5S"/>
+                            <constraint firstItem="ex2-sd-LIW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="DHy-2Z-Qua"/>
+                            <constraint firstItem="fFY-Nb-z8f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="79" id="PNu-Sf-0XZ"/>
+                            <constraint firstItem="hiT-Xp-PRd" firstAttribute="top" secondItem="fFY-Nb-z8f" secondAttribute="bottom" constant="32" id="S4N-s5-Ph4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ex2-sd-LIW" secondAttribute="trailing" constant="10" id="WDg-QP-OLU"/>
+                            <constraint firstItem="hiT-Xp-PRd" firstAttribute="trailing" secondItem="fFY-Nb-z8f" secondAttribute="trailing" id="WNl-MU-Rjv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hiT-Xp-PRd" secondAttribute="trailing" constant="10" id="Xh4-wS-sDb"/>
+                            <constraint firstItem="hiT-Xp-PRd" firstAttribute="leading" secondItem="fFY-Nb-z8f" secondAttribute="leading" id="cAg-Ve-b9b"/>
+                            <constraint firstItem="hiT-Xp-PRd" firstAttribute="height" secondItem="fFY-Nb-z8f" secondAttribute="height" id="gyO-ML-B7t"/>
+                            <constraint firstItem="hiT-Xp-PRd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="ifU-Xw-C4I"/>
+                            <constraint firstItem="fFY-Nb-z8f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="qrL-cT-DmS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ex2-sd-LIW" secondAttribute="bottom" constant="150" id="ywc-ba-ptu"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Xh4-wS-sDb"/>
+                                <exclude reference="ifU-Xw-C4I"/>
+                                <exclude reference="4bt-jK-xYP"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="ex2-sd-LIW" id="ndx-bd-615"/>
