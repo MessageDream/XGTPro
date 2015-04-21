@@ -45,8 +45,8 @@ typedef NS_ENUM(NSInteger, BusinessErrorType)
 
 @protocol BusinessProtocol <NSObject>
 
-- (void)didBusinessSucessWithModel:(BaseModel*)model;
-- (void)didBusinessFail;
+- (void)didBusinessSuccessWithModel:(BaseModel*)model;
+- (void)didBusinessFailWithCode:(NSInteger)code andMsg:(NSString *)msg;
 - (void)didBusinessErrorWithCode:(NSInteger)code andMsg:(NSString *)msg;
 @end
 

@@ -10,7 +10,9 @@
 #import "BaseCustomMessageBox.h"
 #import "ImageUtils.h"
 #import "MainStyle.h"
+#import "BaseViewModel.h"
 #import <SVProgressHUD.h>
+#import <ReactiveCocoa.h>
 
 @interface BaseViewController ()
 {
@@ -35,6 +37,18 @@
         _orientation = [UIApplication sharedApplication].statusBarOrientation;
     }
     return self;
+}
+
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    @weakify(self)
+    [self.viewModel.rac_isObserverActiveSignal subscribeNext:^(NSError *error) {
+        @strongify(self)
+        [self showTip:error.userInfo.allValues[0]];
+    } completed:^{
+        @strongify(self)
+        [self unlockViewSubtractCount];
+    }];
 }
 
 //-(void)didDataModelNoticeSucess:(BaseDataModel*)baseDataModel forBusinessType:( BusinessType)businessID{
@@ -63,7 +77,6 @@
 
 
 -(void)lockViewWithStatus:(NSString *)status{
-    self.view.userInteractionEnabled = NO;
     if(![SVProgressHUD isVisible]){
         [SVProgressHUD showWithStatus:status];
     }else{
@@ -72,7 +85,6 @@
 }
 
 -(void)unlockView{
-    self.view.userInteractionEnabled = YES;
     [SVProgressHUD dismiss];
 }
 
@@ -94,11 +106,6 @@
     if([[[UIDevice currentDevice] systemVersion] floatValue]>=7)
         frame.origin.y = [UIScreen mainScreen].applicationFrame.origin.y;
     return frame;
-}
-
-
-- (void)viewDidLoad{
-    [super viewDidLoad];
 }
 
 -(IBAction)textFiledReturnEditing:(id)sender{

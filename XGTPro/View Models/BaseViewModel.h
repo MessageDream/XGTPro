@@ -1,5 +1,5 @@
 //
-//  BaseDataModel.h
+//  BaseViewModel.h
 //  LightErector
 //
 //  Created by Jayden Zhao on 8/27/14.
@@ -17,6 +17,7 @@
     BaseBusiness *baseBusiness;
 }
 @property(nonatomic,assign)id<ViewModelDelegate> observer;
+@property(nonatomic,strong)RACSignal *rac_isObserverActiveSignal;
 - (RACSignal *)creatBusinessWithName:(NSString *)businessName andExecuteWithData:(NSDictionary *)dic;
-- (void)creatBusinessWithId:(NSInteger)businessId andObserver:(id<BusinessProtocol>)observer andExecuteWithData:(NSDictionary *)dic;
+- (RACSignal *)creatBusinessWithName:(NSString *)businessName andObserver:(id<BusinessProtocol>)observer andExecuteWithData:(NSDictionary *)dic;
 @end

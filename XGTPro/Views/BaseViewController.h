@@ -18,10 +18,10 @@
 @interface BaseViewController : UIViewController<TextFiledReturnEditingDelegate>
 
 @property(nonatomic,assign)UIInterfaceOrientation orientation;
-@property(nonatomic,strong)BaseViewModel *viewModel;
+@property(nonatomic,weak)BaseViewModel *viewModel;
 
 -(void)destroyDataBeforeDealloc;
--(void)lockView;
+-(void)lockViewWithStatus:(NSString *)status;
 -(BOOL)unlockViewSubtractCount;
 -(CGRect)createViewFrame;
 -(void)sendShowTabBarMessage;

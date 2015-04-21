@@ -19,7 +19,7 @@
                                                  fromProtocol:@protocol(HttpConnectDelegate)] flattenMap:^RACStream *(id value) {
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             @strongify(self)
-            NSError *error = [NSError errorWithDomain:@"" code:self.errCode userInfo:@{@"msg":self.errmsg}];
+            NSError *error = [NSError errorWithDomain:NSStringFromSelector(_cmd) code:self.errCode userInfo:@{@(self.errCode):self.errmsg}];
             [subscriber sendError:error];
             return [RACDisposable disposableWithBlock:^{
                 
@@ -31,7 +31,7 @@
         
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             @strongify(self)
-            NSError *error = [NSError errorWithDomain:@"" code:self.errCode userInfo:@{@"msg":self.errmsg}];
+            NSError *error = [NSError errorWithDomain:NSStringFromSelector(_cmd) code:self.errCode userInfo:@{@(self.errCode):self.errmsg}];
             [subscriber sendError:error];
             return [RACDisposable disposableWithBlock:^{
                 

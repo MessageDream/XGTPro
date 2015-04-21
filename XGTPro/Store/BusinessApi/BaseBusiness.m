@@ -143,8 +143,8 @@
 -(void) didHttpConnectError:(enum HttpErrorCode)errorCode{
     _errCode = errorCode;
     _errmsg = [HttpErrorCodeManager getDesFromErrorCode:errorCode];
-    if (self.businessObserver && [self.businessObserver respondsToSelector:@selector(didBusinessErrorWithCode:andMsg:)]){
-        [self.businessObserver didBusinessErrorWithCode:_errCode andMsg:_errmsg];
+    if (self.businessObserver && [self.businessObserver respondsToSelector:@selector(didBusinessFailWithCode:andMsg:)]){
+        [self.businessObserver didBusinessFailWithCode:_errCode andMsg:_errmsg];
     }
 }
 
@@ -162,8 +162,8 @@
         }
        self.resultModel = [self parseModelFromDic:responseBodyDic];
     }
-    if (self.businessObserver && [self.businessObserver respondsToSelector:@selector(didBusinessSucessWithModel:)]){
-        [self.businessObserver didBusinessSucessWithModel:self.resultModel];
+    if (self.businessObserver && [self.businessObserver respondsToSelector:@selector(didBusinessSuccessWithModel:)]){
+        [self.businessObserver didBusinessSuccessWithModel:self.resultModel];
     }
 }
 

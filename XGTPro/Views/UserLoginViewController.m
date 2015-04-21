@@ -12,20 +12,21 @@
 #import <RACEXTScope.h>
 
 @interface UserLoginViewController ()
-
+@property(nonatomic,strong)UserLoginViewModel *loginViewModel;
 @end
 
 @implementation UserLoginViewController
 
 
 - (void)viewDidLoad {
+    self.viewModel = self.loginViewModel = [[UserLoginViewModel alloc] init];
     [super viewDidLoad];
-    self.viewModel = [[UserLoginViewModel alloc] init];
+    
     @weakify(self)
     self.loginButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         @strongify(self)
-        return [[[[((UserLoginViewModel *) self.viewModel) loginWithUserName:@"user" andPwd:@"password"] doError:^(NSError *error) {
-            NSLog(@"%@",[error.userInfo objectForKey:@"msg"]);
+        return [[[[self.loginViewModel loginWithUserName:@"user" andPwd:@"password"] doError:^(NSError *error) {
+            NSLog(@"%@",error.userInfo.allValues[0]);
         }] doNext:^(id x) {
             NSLog(@"1232321344%@",x);
         }] doCompleted:^{
