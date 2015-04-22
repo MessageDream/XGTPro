@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--User Login View Controller-->
@@ -16,68 +17,87 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="222" affinity="minY"/>
+                            <userLayoutGuide location="147" affinity="minX"/>
+                            <userLayoutGuide location="213" affinity="minX"/>
+                            <userLayoutGuide location="213" affinity="minX"/>
+                            <userLayoutGuide location="222" affinity="minY"/>
+                            <userLayoutGuide location="222" affinity="minY"/>
+                            <userLayoutGuide location="222" affinity="minY"/>
+                            <userLayoutGuide location="222" affinity="minY"/>
+                            <userLayoutGuide location="300" affinity="minY"/>
+                            <userLayoutGuide location="300" affinity="minY"/>
+                            <userLayoutGuide location="300" affinity="minY"/>
+                            <userLayoutGuide location="435" affinity="minX"/>
+                            <userLayoutGuide location="378" affinity="minX"/>
+                            <userLayoutGuide location="99" affinity="minX"/>
+                            <userLayoutGuide location="300" affinity="minX"/>
+                            <userLayoutGuide location="300" affinity="minX"/>
+                        </userGuides>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lA2-hk-qdM" customClass="TitleBarView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zla-yp-dGM" customClass="TitleBarView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <userGuides>
+                                    <userLayoutGuide location="300" affinity="minX"/>
+                                    <userLayoutGuide location="300" affinity="minX"/>
+                                    <userLayoutGuide location="300" affinity="minX"/>
+                                    <userLayoutGuide location="300" affinity="minX"/>
+                                    <userLayoutGuide location="300" affinity="minX"/>
+                                    <userLayoutGuide location="300" affinity="minX"/>
+                                    <userLayoutGuide location="300" affinity="minX"/>
+                                    <userLayoutGuide location="300" affinity="minX"/>
+                                    <userLayoutGuide location="300" affinity="minX"/>
+                                    <userLayoutGuide location="300" affinity="minX"/>
+                                    <userLayoutGuide location="300" affinity="minX"/>
+                                    <userLayoutGuide location="300" affinity="minX"/>
+                                </userGuides>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ex2-sd-LIW">
-                                        <rect key="frame" x="20" y="278" width="560" height="30"/>
+                                        <rect key="frame" x="36" y="269" width="560" height="63"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="63" id="why-VU-e6C"/>
+                                        </constraints>
                                         <state key="normal" title="登陆">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFY-Nb-z8f">
-                                        <rect key="frame" x="20" y="128" width="560" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="I8E-X6-x1f"/>
-                                        </constraints>
+                                        <rect key="frame" x="10" y="248" width="580" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hiT-Xp-PRd">
-                                        <rect key="frame" x="20" y="198" width="560" height="30"/>
+                                        <rect key="frame" x="10" y="174" width="580" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="c03-zp-rkM"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" red="0.44799387730000001" green="1" blue="0.38432825209999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="fFY-Nb-z8f" firstAttribute="top" secondItem="hiT-Xp-PRd" secondAttribute="bottom" constant="120" id="1Xx-Qg-Ws8"/>
-                                    <constraint firstItem="fFY-Nb-z8f" firstAttribute="top" secondItem="lA2-hk-qdM" secondAttribute="top" constant="128" id="21y-IX-RxP"/>
-                                    <constraint firstAttribute="bottom" secondItem="fFY-Nb-z8f" secondAttribute="bottom" constant="442" id="44u-UU-ptK"/>
-                                    <constraint firstItem="ex2-sd-LIW" firstAttribute="top" secondItem="hiT-Xp-PRd" secondAttribute="bottom" constant="50" id="FSq-E7-ctg"/>
-                                    <constraint firstAttribute="trailing" secondItem="fFY-Nb-z8f" secondAttribute="trailing" constant="20" id="FeD-c7-g3H"/>
-                                    <constraint firstItem="hiT-Xp-PRd" firstAttribute="height" secondItem="fFY-Nb-z8f" secondAttribute="height" id="ThQ-9z-I5g"/>
-                                    <constraint firstItem="fFY-Nb-z8f" firstAttribute="top" secondItem="hiT-Xp-PRd" secondAttribute="bottom" constant="328" id="VWL-XL-hHB"/>
-                                    <constraint firstItem="hiT-Xp-PRd" firstAttribute="leading" secondItem="fFY-Nb-z8f" secondAttribute="leading" id="VWo-XE-1ai"/>
-                                    <constraint firstItem="hiT-Xp-PRd" firstAttribute="leading" secondItem="ex2-sd-LIW" secondAttribute="leading" id="WUB-3I-8Xd"/>
-                                    <constraint firstItem="hiT-Xp-PRd" firstAttribute="height" secondItem="ex2-sd-LIW" secondAttribute="height" id="XBR-Qt-5Ej"/>
-                                    <constraint firstItem="hiT-Xp-PRd" firstAttribute="trailing" secondItem="ex2-sd-LIW" secondAttribute="trailing" id="a6g-QS-tHA"/>
-                                    <constraint firstItem="fFY-Nb-z8f" firstAttribute="leading" secondItem="lA2-hk-qdM" secondAttribute="leading" constant="20" id="tLI-uY-2ou"/>
-                                    <constraint firstItem="hiT-Xp-PRd" firstAttribute="trailing" secondItem="fFY-Nb-z8f" secondAttribute="trailing" id="x57-6x-2Pu"/>
-                                    <constraint firstItem="hiT-Xp-PRd" firstAttribute="top" secondItem="fFY-Nb-z8f" secondAttribute="bottom" constant="40" id="ytS-O3-0kf"/>
+                                    <constraint firstAttribute="trailing" secondItem="fFY-Nb-z8f" secondAttribute="trailing" constant="10" id="I80-bi-iRr"/>
+                                    <constraint firstItem="hiT-Xp-PRd" firstAttribute="leading" secondItem="Zla-yp-dGM" secondAttribute="leading" constant="10" id="LuT-0v-dsq"/>
+                                    <constraint firstItem="fFY-Nb-z8f" firstAttribute="height" secondItem="hiT-Xp-PRd" secondAttribute="height" id="SsC-qM-a7b"/>
+                                    <constraint firstItem="ex2-sd-LIW" firstAttribute="top" secondItem="fFY-Nb-z8f" secondAttribute="bottom" constant="-9" id="WOO-CQ-vJQ"/>
+                                    <constraint firstItem="ex2-sd-LIW" firstAttribute="leading" secondItem="Zla-yp-dGM" secondAttribute="leading" constant="36" id="e5s-wM-xUt"/>
+                                    <constraint firstAttribute="trailing" secondItem="ex2-sd-LIW" secondAttribute="trailing" constant="4" id="ghE-Te-mdo"/>
+                                    <constraint firstAttribute="trailing" secondItem="hiT-Xp-PRd" secondAttribute="trailing" constant="10" id="jqR-eT-dun"/>
+                                    <constraint firstItem="fFY-Nb-z8f" firstAttribute="leading" secondItem="Zla-yp-dGM" secondAttribute="leading" constant="10" id="rVG-2a-S4a"/>
+                                    <constraint firstItem="fFY-Nb-z8f" firstAttribute="top" secondItem="hiT-Xp-PRd" secondAttribute="bottom" constant="44" id="u7Y-vD-5Px"/>
+                                    <constraint firstItem="hiT-Xp-PRd" firstAttribute="top" secondItem="Zla-yp-dGM" secondAttribute="top" constant="174" id="wbE-sH-cLn"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="1Xx-Qg-Ws8"/>
-                                        <exclude reference="44u-UU-ptK"/>
-                                        <exclude reference="VWL-XL-hHB"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" red="0.44799387730000001" green="1" blue="0.38432825209999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="lA2-hk-qdM" secondAttribute="bottom" id="4c6-e5-Rl2"/>
-                            <constraint firstItem="lA2-hk-qdM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CfH-8c-JnX"/>
-                            <constraint firstAttribute="trailing" secondItem="lA2-hk-qdM" secondAttribute="trailing" id="PSC-xO-BiB"/>
-                            <constraint firstItem="lA2-hk-qdM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="beR-SQ-AOT"/>
-                            <constraint firstItem="lA2-hk-qdM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dMO-BM-Lcs"/>
+                            <constraint firstItem="Zla-yp-dGM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="3vF-ko-CZY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zla-yp-dGM" secondAttribute="trailing" constant="-16" id="BUA-A0-yhu"/>
+                            <constraint firstItem="Zla-yp-dGM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="aJh-1r-ISK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zla-yp-dGM" secondAttribute="bottom" id="e39-bB-vzt"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="beR-SQ-AOT"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="ex2-sd-LIW" id="ndx-bd-615"/>
@@ -85,6 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="643" y="349"/>
         </scene>
     </scenes>
 </document>

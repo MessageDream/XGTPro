@@ -8,11 +8,11 @@
 
 #import "TitleBarView.h"
 #import "ImageUtils.h"
-#import "XXNibBridge.h"
-
-@interface TitleBarView () <XXNibBridge>
-
-@end
+//#import "XXNibBridge.h"
+//
+//@interface TitleBarView () <XXNibBridge>
+//
+//@end
 @implementation TitleBarView
 @synthesize customTitleBar = _customTitleBar;
 
@@ -45,8 +45,9 @@
 }
 
 -(void)awakeFromNib{
-//    [[NSBundle mainBundle] loadNibNamed:@"TitleBarView" owner:self options:nil];
-//    [self addSubview:self.navigationBar];
+     [super awakeFromNib];
+    [[NSBundle mainBundle] loadNibNamed:@"TitleBarView" owner:self options:nil];
+    [self addSubview:self.contentView];
 }
 /*
 // Only override drawRect: if you perform custom drawing.
