@@ -17,9 +17,13 @@
 
 @implementation UserLoginViewController
 
-
-- (void)viewDidLoad {
-    self.viewModel = self.loginViewModel = [[UserLoginViewModel alloc] init];
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+       self.viewModel = self.loginViewModel = [[UserLoginViewModel alloc] init];
+    }
+    return self;
+}
+- (void)viewDidLoad {   
     [super viewDidLoad];
     
     @weakify(self)

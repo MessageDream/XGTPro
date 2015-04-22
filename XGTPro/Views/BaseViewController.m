@@ -39,6 +39,13 @@
     return self;
 }
 
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+       _orientation = [UIApplication sharedApplication].statusBarOrientation;
+    }
+    return self;
+}
+
 - (void)viewDidLoad{
     [super viewDidLoad];
     @weakify(self)
