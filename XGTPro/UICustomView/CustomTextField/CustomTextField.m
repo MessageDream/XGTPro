@@ -7,7 +7,6 @@
 //
 
 #import "CustomTextField.h"
-#import "ResDefine.h"
 
 #define Text_Xoffset 10
 
@@ -42,7 +41,7 @@
         
         _frameImageView = [[UIImageView alloc] initWithFrame:backgroundFrame];
         _frameImageView.contentMode    = UIViewContentModeScaleToFill;
-        UIImage *image = [UIImage imageNamed:NSLocalizedStringFromTable(@"coustom_textfield",Res_Image,@"")];
+        UIImage *image = [UIImage imageNamed:@"coustom_textfield"];
         _frameImageView.image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(15,15,15,15)];
         
         backgroundFrame.origin.x+=Text_Xoffset;

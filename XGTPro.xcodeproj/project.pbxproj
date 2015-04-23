@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5BB4E629DA03F485388D78E1 /* libPods-XGTPro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE483A6D6B84C92C898E117A /* libPods-XGTPro.a */; };
 		B2339F641ADCC5E900844088 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2339F631ADCC5E900844088 /* main.m */; };
-		B2339F721ADCC5E900844088 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2339F701ADCC5E900844088 /* LaunchScreen.xib */; };
 		B2339F7E1ADCC5EA00844088 /* XGTProTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2339F7D1ADCC5EA00844088 /* XGTProTests.m */; };
 		B233A0F11ADCC64700844088 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2339F881ADCC64700844088 /* AppDelegate.m */; };
 		B233A1201ADCC64700844088 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = B233A0041ADCC64700844088 /* PushConfig.plist */; };
@@ -25,13 +24,10 @@
 		B233A12B1ADCC64700844088 /* criminal.m4r in Resources */ = {isa = PBXBuildFile; fileRef = B233A0131ADCC64700844088 /* criminal.m4r */; };
 		B233A12C1ADCC64700844088 /* I_need_a_doctor.m4r in Resources */ = {isa = PBXBuildFile; fileRef = B233A0141ADCC64700844088 /* I_need_a_doctor.m4r */; };
 		B233A12D1ADCC64700844088 /* What_are_words.m4r in Resources */ = {isa = PBXBuildFile; fileRef = B233A0151ADCC64700844088 /* What_are_words.m4r */; };
-		B233A12E1ADCC64700844088 /* StringDescribe.strings in Resources */ = {isa = PBXBuildFile; fileRef = B233A0161ADCC64700844088 /* StringDescribe.strings */; };
 		B233A1321ADCC64700844088 /* ButtonListAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B233A0241ADCC64700844088 /* ButtonListAlertView.m */; };
 		B233A1331ADCC64700844088 /* CustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B233A0261ADCC64700844088 /* CustomAlertView.m */; };
 		B233A1341ADCC64700844088 /* CustomArticleAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B233A0291ADCC64700844088 /* CustomArticleAlertView.m */; };
 		B233A1361ADCC64700844088 /* CustomImageZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B233A02F1ADCC64700844088 /* CustomImageZoomView.m */; };
-		B233A1381ADCC64700844088 /* BaseCustomMessageBox.m in Sources */ = {isa = PBXBuildFile; fileRef = B233A0351ADCC64700844088 /* BaseCustomMessageBox.m */; };
-		B233A13A1ADCC64700844088 /* CustomMessageBox.m in Sources */ = {isa = PBXBuildFile; fileRef = B233A0391ADCC64700844088 /* CustomMessageBox.m */; };
 		B233A13C1ADCC64700844088 /* CustomPullRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B233A03E1ADCC64700844088 /* CustomPullRefreshTableView.m */; };
 		B233A13D1ADCC64700844088 /* CustomPullRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = B233A0401ADCC64700844088 /* CustomPullRefreshView.m */; };
 		B233A13E1ADCC64700844088 /* CustomScrollFullScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = B233A0431ADCC64700844088 /* CustomScrollFullScreen.m */; };
@@ -62,8 +58,10 @@
 		B271F9D91ADE5A2900B6C880 /* BaseBusiness+Rac.m in Sources */ = {isa = PBXBuildFile; fileRef = B271F9D81ADE5A2900B6C880 /* BaseBusiness+Rac.m */; };
 		B271FA111ADE7F7400B6C880 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B271FA0F1ADE7F7400B6C880 /* Main.storyboard */; };
 		B27E25A31AE688B000E4FC07 /* TitleBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B27E25A21AE688B000E4FC07 /* TitleBarView.xib */; };
+		B295EA461AE8A32900717964 /* UserLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B295EA451AE8A32900717964 /* UserLoginViewController.xib */; };
+		B295EA4E1AE8D10800717964 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = B295EA4C1AE8D10800717964 /* Localized.strings */; };
+		B295EA5E1AE8E6DA00717964 /* UserLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B295EA5D1AE8E6DA00717964 /* UserLoginViewModel.m */; };
 		B2A425161AE534C1003EA1E1 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A425151AE534C1003EA1E1 /* UserModel.m */; };
-		B2A4251A1AE53521003EA1E1 /* UserLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A425191AE53521003EA1E1 /* UserLoginViewModel.m */; };
 		B2C74E9E1ADD03E8002C5C3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C74E9D1ADD03E8002C5C3C /* Images.xcassets */; };
 		B2C74EA71ADD0475002C5C3C /* BaseBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C74EA21ADD0475002C5C3C /* BaseBusiness.m */; };
 		B2C74EA81ADD0475002C5C3C /* FormMltipart.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C74EA61ADD0475002C5C3C /* FormMltipart.m */; };
@@ -92,14 +90,12 @@
 		B2339F5E1ADCC5E900844088 /* XGTPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XGTPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2339F621ADCC5E900844088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2339F631ADCC5E900844088 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B2339F711ADCC5E900844088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B2339F771ADCC5EA00844088 /* XGTProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XGTProTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2339F7C1ADCC5EA00844088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2339F7D1ADCC5EA00844088 /* XGTProTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XGTProTests.m; sourceTree = "<group>"; };
 		B2339F871ADCC64700844088 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B2339F881ADCC64700844088 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B233A0041ADCC64700844088 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
-		B233A0081ADCC64700844088 /* ResDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResDefine.h; sourceTree = "<group>"; };
 		B233A00A1ADCC64700844088 /* 05.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = 05.m4r; sourceTree = "<group>"; };
 		B233A00B1ADCC64700844088 /* 06.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = 06.m4r; sourceTree = "<group>"; };
 		B233A00C1ADCC64700844088 /* 08.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = 08.m4r; sourceTree = "<group>"; };
@@ -112,7 +108,6 @@
 		B233A0131ADCC64700844088 /* criminal.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = criminal.m4r; sourceTree = "<group>"; };
 		B233A0141ADCC64700844088 /* I_need_a_doctor.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = I_need_a_doctor.m4r; sourceTree = "<group>"; };
 		B233A0151ADCC64700844088 /* What_are_words.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = What_are_words.m4r; sourceTree = "<group>"; };
-		B233A0161ADCC64700844088 /* StringDescribe.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = StringDescribe.strings; sourceTree = "<group>"; };
 		B233A0231ADCC64700844088 /* ButtonListAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonListAlertView.h; sourceTree = "<group>"; };
 		B233A0241ADCC64700844088 /* ButtonListAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonListAlertView.m; sourceTree = "<group>"; };
 		B233A0251ADCC64700844088 /* CustomAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAlertView.h; sourceTree = "<group>"; };
@@ -121,10 +116,6 @@
 		B233A0291ADCC64700844088 /* CustomArticleAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomArticleAlertView.m; sourceTree = "<group>"; };
 		B233A02E1ADCC64700844088 /* CustomImageZoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomImageZoomView.h; sourceTree = "<group>"; };
 		B233A02F1ADCC64700844088 /* CustomImageZoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomImageZoomView.m; sourceTree = "<group>"; };
-		B233A0341ADCC64700844088 /* BaseCustomMessageBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCustomMessageBox.h; sourceTree = "<group>"; };
-		B233A0351ADCC64700844088 /* BaseCustomMessageBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCustomMessageBox.m; sourceTree = "<group>"; };
-		B233A0381ADCC64700844088 /* CustomMessageBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMessageBox.h; sourceTree = "<group>"; };
-		B233A0391ADCC64700844088 /* CustomMessageBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMessageBox.m; sourceTree = "<group>"; };
 		B233A03D1ADCC64700844088 /* CustomPullRefreshTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPullRefreshTableView.h; sourceTree = "<group>"; };
 		B233A03E1ADCC64700844088 /* CustomPullRefreshTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPullRefreshTableView.m; sourceTree = "<group>"; };
 		B233A03F1ADCC64700844088 /* CustomPullRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPullRefreshView.h; sourceTree = "<group>"; };
@@ -187,10 +178,12 @@
 		B271F9D81ADE5A2900B6C880 /* BaseBusiness+Rac.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseBusiness+Rac.m"; sourceTree = "<group>"; };
 		B271FA101ADE7F7400B6C880 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B27E25A21AE688B000E4FC07 /* TitleBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleBarView.xib; sourceTree = "<group>"; };
+		B295EA451AE8A32900717964 /* UserLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserLoginViewController.xib; sourceTree = "<group>"; };
+		B295EA4D1AE8D10800717964 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localized.strings"; sourceTree = "<group>"; };
+		B295EA5C1AE8E6DA00717964 /* UserLoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLoginViewModel.h; sourceTree = "<group>"; };
+		B295EA5D1AE8E6DA00717964 /* UserLoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLoginViewModel.m; sourceTree = "<group>"; };
 		B2A425141AE534C1003EA1E1 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		B2A425151AE534C1003EA1E1 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
-		B2A425181AE53521003EA1E1 /* UserLoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserLoginViewModel.h; path = UserLoginViewModel/UserLoginViewModel.h; sourceTree = "<group>"; };
-		B2A425191AE53521003EA1E1 /* UserLoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserLoginViewModel.m; path = UserLoginViewModel/UserLoginViewModel.m; sourceTree = "<group>"; };
 		B2C74E9D1ADD03E8002C5C3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B2C74EA11ADD0475002C5C3C /* BaseBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseBusiness.h; sourceTree = "<group>"; };
 		B2C74EA21ADD0475002C5C3C /* BaseBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseBusiness.m; sourceTree = "<group>"; };
@@ -270,7 +263,6 @@
 			children = (
 				B2339F871ADCC64700844088 /* AppDelegate.h */,
 				B2339F881ADCC64700844088 /* AppDelegate.m */,
-				B2339F701ADCC5E900844088 /* LaunchScreen.xib */,
 				B271FA0F1ADE7F7400B6C880 /* Main.storyboard */,
 				B271F99E1ADE1D5300B6C880 /* Views */,
 				B271F99D1ADE1D5300B6C880 /* View Models */,
@@ -323,10 +315,9 @@
 		B233A0051ADCC64700844088 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B295EA4C1AE8D10800717964 /* Localized.strings */,
 				B2C74E9D1ADD03E8002C5C3C /* Images.xcassets */,
-				B233A0081ADCC64700844088 /* ResDefine.h */,
 				B233A0091ADCC64700844088 /* Sounds */,
-				B233A0161ADCC64700844088 /* StringDescribe.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -356,7 +347,6 @@
 				B233A0211ADCC64700844088 /* CustomAlertView */,
 				B233A0271ADCC64700844088 /* CustomArticleAlertView */,
 				B233A02D1ADCC64700844088 /* CustomImageZoomView */,
-				B233A0331ADCC64700844088 /* CustomMessageBox */,
 				B233A03C1ADCC64700844088 /* CustomPullRefreshTableView */,
 				B233A0411ADCC64700844088 /* CustomScrollFullScreen */,
 				B233A04E1ADCC64700844088 /* CustomTabBar */,
@@ -403,17 +393,6 @@
 				B233A02F1ADCC64700844088 /* CustomImageZoomView.m */,
 			);
 			path = CustomImageZoomView;
-			sourceTree = "<group>";
-		};
-		B233A0331ADCC64700844088 /* CustomMessageBox */ = {
-			isa = PBXGroup;
-			children = (
-				B233A0341ADCC64700844088 /* BaseCustomMessageBox.h */,
-				B233A0351ADCC64700844088 /* BaseCustomMessageBox.m */,
-				B233A0381ADCC64700844088 /* CustomMessageBox.h */,
-				B233A0391ADCC64700844088 /* CustomMessageBox.m */,
-			);
-			path = CustomMessageBox;
 			sourceTree = "<group>";
 		};
 		B233A03C1ADCC64700844088 /* CustomPullRefreshTableView */ = {
@@ -518,7 +497,7 @@
 		B271F99D1ADE1D5300B6C880 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				B2A425171AE534EF003EA1E1 /* UserLoginViewModel */,
+				B295EA5B1AE8E6DA00717964 /* UserLoginViewModel */,
 				B271F9C11ADE1E6B00B6C880 /* BaseViewModel.h */,
 				B271F9C21ADE1E6B00B6C880 /* BaseViewModel.m */,
 				B271F9C31ADE1E6B00B6C880 /* ViewModelDelegate.h */,
@@ -568,6 +547,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		B295EA5B1AE8E6DA00717964 /* UserLoginViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B295EA5C1AE8E6DA00717964 /* UserLoginViewModel.h */,
+				B295EA5D1AE8E6DA00717964 /* UserLoginViewModel.m */,
+			);
+			path = UserLoginViewModel;
+			sourceTree = "<group>";
+		};
 		B2A425131AE534C1003EA1E1 /* UserModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -575,15 +563,6 @@
 				B2A425151AE534C1003EA1E1 /* UserModel.m */,
 			);
 			path = UserModel;
-			sourceTree = "<group>";
-		};
-		B2A425171AE534EF003EA1E1 /* UserLoginViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				B2A425181AE53521003EA1E1 /* UserLoginViewModel.h */,
-				B2A425191AE53521003EA1E1 /* UserLoginViewModel.m */,
-			);
-			name = UserLoginViewModel;
 			sourceTree = "<group>";
 		};
 		B2C74E9F1ADD0475002C5C3C /* Store */ = {
@@ -677,6 +656,7 @@
 			children = (
 				B2D382A81AE53D7D00FC27DA /* UserLoginViewController.h */,
 				B2D382A91AE53D7D00FC27DA /* UserLoginViewController.m */,
+				B295EA451AE8A32900717964 /* UserLoginViewController.xib */,
 			);
 			name = UserLoginView;
 			sourceTree = "<group>";
@@ -763,6 +743,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = B2339F551ADCC5E900844088;
 			productRefGroup = B2339F5F1ADCC5E900844088 /* Products */;
@@ -783,19 +764,19 @@
 				B233A1281ADCC64700844088 /* 24.m4r in Resources */,
 				B233A1251ADCC64700844088 /* 14.m4r in Resources */,
 				B233A1221ADCC64700844088 /* 05.m4r in Resources */,
-				B2339F721ADCC5E900844088 /* LaunchScreen.xib in Resources */,
 				B233A12A1ADCC64700844088 /* 27.m4r in Resources */,
 				B233A1261ADCC64700844088 /* 21.m4r in Resources */,
 				B233A12C1ADCC64700844088 /* I_need_a_doctor.m4r in Resources */,
+				B295EA461AE8A32900717964 /* UserLoginViewController.xib in Resources */,
 				B233A1271ADCC64700844088 /* 22.m4r in Resources */,
 				B233A1291ADCC64700844088 /* 26.m4r in Resources */,
 				B233A1241ADCC64700844088 /* 08.m4r in Resources */,
+				B295EA4E1AE8D10800717964 /* Localized.strings in Resources */,
 				B233A12B1ADCC64700844088 /* criminal.m4r in Resources */,
 				B2C74E9E1ADD03E8002C5C3C /* Images.xcassets in Resources */,
 				B271FA111ADE7F7400B6C880 /* Main.storyboard in Resources */,
 				B27E25A31AE688B000E4FC07 /* TitleBarView.xib in Resources */,
 				B233A1231ADCC64700844088 /* 06.m4r in Resources */,
-				B233A12E1ADCC64700844088 /* StringDescribe.strings in Resources */,
 				B233A12D1ADCC64700844088 /* What_are_words.m4r in Resources */,
 				B233A1201ADCC64700844088 /* PushConfig.plist in Resources */,
 			);
@@ -863,12 +844,10 @@
 				B233A13E1ADCC64700844088 /* CustomScrollFullScreen.m in Sources */,
 				B2C74EBA1ADD07D0002C5C3C /* BaseHttpConnect.m in Sources */,
 				B233A0F11ADCC64700844088 /* AppDelegate.m in Sources */,
-				B233A13A1ADCC64700844088 /* CustomMessageBox.m in Sources */,
 				B233A13F1ADCC64700844088 /* UIViewController+CustomFullScreenSupport.m in Sources */,
 				B233A1361ADCC64700844088 /* CustomImageZoomView.m in Sources */,
 				B2D382AA1AE53D7D00FC27DA /* UserLoginViewController.m in Sources */,
 				B2C74EBD1ADD07D0002C5C3C /* FileHttpConnect.m in Sources */,
-				B2A4251A1AE53521003EA1E1 /* UserLoginViewModel.m in Sources */,
 				B233A14E1ADCC64700844088 /* CustomTitleBar.m in Sources */,
 				B233A14D1ADCC64700844088 /* CustomTextView.m in Sources */,
 				B233A13D1ADCC64700844088 /* CustomPullRefreshView.m in Sources */,
@@ -885,10 +864,10 @@
 				B233A1331ADCC64700844088 /* CustomAlertView.m in Sources */,
 				B233A14B1ADCC64700844088 /* CustomPlaceHolderTextField.m in Sources */,
 				B2E24F451AE013F1003E0116 /* UserLoginBusiness.m in Sources */,
-				B233A1381ADCC64700844088 /* BaseCustomMessageBox.m in Sources */,
 				B233A1771ADCC64700844088 /* PushNotification.m in Sources */,
 				B233A1791ADCC64700844088 /* StringUtils.m in Sources */,
 				B271F9BE1ADE1D5300B6C880 /* TitleBarAndTableView.m in Sources */,
+				B295EA5E1AE8E6DA00717964 /* UserLoginViewModel.m in Sources */,
 				B271F9B81ADE1D5300B6C880 /* BaseViewController.m in Sources */,
 				B271F9BF1ADE1D5300B6C880 /* TitleBarView.m in Sources */,
 				B2C74EBC1ADD07D0002C5C3C /* HttpErrorCodeManager.m in Sources */,
@@ -917,20 +896,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B2339F701ADCC5E900844088 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2339F711ADCC5E900844088 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 		B271FA0F1ADE7F7400B6C880 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B271FA101ADE7F7400B6C880 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B295EA4C1AE8D10800717964 /* Localized.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B295EA4D1AE8D10800717964 /* zh-Hans */,
+			);
+			name = Localized.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -7,7 +7,6 @@
 //
 
 #import "ButtonListAlertView.h"
-#import "ResDefine.h"
 
 @interface ButtonListAlertView()
 {
@@ -32,7 +31,7 @@
         _lbl_title.textColor = [UIColor colorWithRed:28.0f/255.0f green:132.0f/255.0f  blue:156.0f/255.0f  alpha:1];
         [frameImageView addSubview:_lbl_title];
         
-        lineImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:NSLocalizedStringFromTable(@"messagebox_line",Res_Image,@"")]];
+        lineImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"messagebox_line"]];
         CGRect lineImageViewFrame = lineImageView.frame;
         lineImageViewFrame.origin.y = _lbl_title.frame.origin.y+_lbl_title.frame.size.height+10;
         lineImageView.frame = lineImageViewFrame;
@@ -47,7 +46,7 @@
 }
 -(id)initWithButtonCount:(int)count
 {
-    double height = 30+11+count*([UIImage imageNamed:NSLocalizedStringFromTable(@"button_long2",Res_Image,@"")].size.height+10)+10;
+    double height = 30+11+count*([UIImage imageNamed:@"button_long2"].size.height+10)+10;
     
     CGRect frame = CGRectMake(5, [UIScreen mainScreen].bounds.size.height/2-height/2, [UIScreen mainScreen].bounds.size.width-10, height);
     
@@ -58,7 +57,7 @@
     double buttonY = 10;
     for(int n=0;n<count;n++)
     {
-        UIImage *image = [UIImage imageNamed:NSLocalizedStringFromTable(@"button_long2",Res_Image,@"")];
+        UIImage *image = [UIImage imageNamed:@"button_long2"];
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.backgroundColor = [UIColor clearColor];
         [button setBackgroundImage:image forState:UIControlStateNormal];

@@ -7,8 +7,11 @@
 //
 
 #import "BaseViewController.h"
+@class  UserViewModel;
 
 @interface UserLoginViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UITextField *userNameField;
+@property (weak, nonatomic) IBOutlet UITextField *pwdField;
 
 @end

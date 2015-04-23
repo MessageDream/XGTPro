@@ -7,7 +7,6 @@
 //
 
 #import "CustomAlertView.h"
-#import "ResDefine.h"
 
 @interface CustomAlertView()
 {
@@ -33,7 +32,7 @@
         self.backgroundColor = [UIColor blackColor];
         self.alpha = 0.8;
         
-        UIImage *image = [UIImage imageNamed:NSLocalizedStringFromTable(@"alertview_frame",Res_Image,@"")];
+        UIImage *image = [UIImage imageNamed:@"alertview_frame"];
         frameImageView = [[UIImageView alloc] initWithFrame:frame];
         frameImageView.contentMode    = UIViewContentModeScaleToFill;
         frameImageView.image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(10,10,image.size.height-10,image.size.width-10)];
@@ -42,7 +41,7 @@
         [self addSubview:frameImageView];
         
         
-        image = [UIImage imageNamed:NSLocalizedStringFromTable(@"alertview_close_button",Res_Image,@"")];
+        image = [UIImage imageNamed:@"alertview_close_button"];
         _btn_close = [UIButton buttonWithType:UIButtonTypeCustom];
         _btn_close.contentMode = UIViewContentModeScaleToFill;
         [_btn_close setBackgroundImage:image forState:UIControlStateNormal];

@@ -7,7 +7,6 @@
 //
 
 #import "CustomTextView.h"
-#import "ResDefine.h"
 
 #define Text_Xoffset 5
 
@@ -27,7 +26,7 @@
         
         _frameImageView = [[UIImageView alloc] initWithFrame:backgroundFrame];
         _frameImageView.contentMode    = UIViewContentModeScaleToFill;
-        UIImage *image = [UIImage imageNamed:NSLocalizedStringFromTable(@"coustom_textfield",Res_Image,@"")];
+        UIImage *image = [UIImage imageNamed:@"coustom_textfield"];
         _frameImageView.image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(5,5,image.size.height-10,image.size.width-10)];
         _frameImageView.userInteractionEnabled = YES;
         [self addSubview:_frameImageView];

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 //#import "JPushNotification.h"
+#import "UserLoginViewController.h"
 
 @interface AppDelegate()
 {
@@ -18,21 +19,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    [application setStatusBarStyle:UIStatusBarStyleLightContent];
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    // Override point for customization after application launch.
-//    self.window.backgroundColor = [UIColor whiteColor];
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    UserLoginViewController *loginViewController=  [[UserLoginViewController alloc] initWithNibName:@"UserLoginViewController" bundle:nil];
     
-    //    //建立根Node，然后建立第一个显示的UIViewController
-    //    RootViewController *rootViewController=  [[RootViewController alloc] initWithLaunchOptions:launchOptions];
-    //    self.rootModule = [[RootModule alloc] init];
-    //    self.rootModule.window = self.window;
-    //    self.rootModule.rootViewController = rootViewController;
-    //    rootViewController.parentModule=self.rootModule;
-    //    [self.rootModule createChildModule];
-    //
-    //    self.window.rootViewController =rootViewController;
-    //    [self.window makeKeyAndVisible];
+    self.window.rootViewController =loginViewController;
+    [self.window makeKeyAndVisible];
     
     //注册极光推送
 //    jpush=[JPushNotification sharePushNotification];

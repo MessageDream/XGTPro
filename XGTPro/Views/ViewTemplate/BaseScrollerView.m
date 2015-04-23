@@ -32,7 +32,6 @@
         _lbl_aboveRefreshText = [[UILabel alloc] initWithFrame:_aboveRefreshView.bounds];
         _lbl_aboveRefreshText.backgroundColor = [UIColor clearColor];
         _lbl_aboveRefreshText.textAlignment = NSTextAlignmentCenter;
-        _lbl_aboveRefreshText.text = NSLocalizedStringFromTable(@"Refresh",Res_String,@"");
         _lbl_aboveRefreshText.font = [UIFont systemFontOfSize:14];
         _lbl_aboveRefreshText.textColor = [UIColor colorWithRed:153.0f/255.0f green:153.0f/255.0f  blue:153.0f/255.0f  alpha:1];
         [_aboveRefreshView addSubview:_lbl_aboveRefreshText];
@@ -46,7 +45,6 @@
         _lbl_belowRefreshText = [[UILabel alloc] initWithFrame:_aboveRefreshView.bounds];
         _lbl_belowRefreshText.backgroundColor = [UIColor clearColor];
         _lbl_belowRefreshText.textAlignment = NSTextAlignmentCenter;
-        _lbl_belowRefreshText.text = NSLocalizedStringFromTable(@"Refresh",Res_String,@"");
         _lbl_belowRefreshText.font = [UIFont systemFontOfSize:14];
         _lbl_belowRefreshText.textColor = [UIColor colorWithRed:153.0f/255.0f green:153.0f/255.0f  blue:153.0f/255.0f  alpha:1];
         [_belowRefreshView addSubview:_lbl_belowRefreshText];

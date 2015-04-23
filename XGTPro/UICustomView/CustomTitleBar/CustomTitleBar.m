@@ -7,7 +7,6 @@
 //
 
 #import "CustomTitleBar.h"
-#import "ResDefine.h"
 
 @interface CustomTitleBar()
 {
@@ -180,7 +179,7 @@
         CGRect frame;
         if(self.leftButtonImage != nil)
         {
-            _decorateLine = [[UIImageView alloc] initWithImage:[UIImage imageNamed:NSLocalizedStringFromTable(@"title_bar_line",Res_Image,@"")]];
+            _decorateLine = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title_bar_line"]];
             frame = _decorateLine.frame;
             frame.origin.x = _leftButton.frame.origin.x+_leftButton.frame.size.width+10;
             frame.size.height = self.bounds.size.height;
@@ -189,7 +188,7 @@
         }
         if(self.rightButtonImage != nil)
         {
-            _decorateLine2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:NSLocalizedStringFromTable(@"title_bar_line",Res_Image,@"")]];
+            _decorateLine2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title_bar_line"]];
             frame = _decorateLine2.frame;
             frame.origin.x =_rightButton.frame.origin.x-10;
             frame.size.height = self.bounds.size.height;

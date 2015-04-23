@@ -12,14 +12,20 @@
 #import <RACEXTScope.h>
 
 @interface UserLoginViewController ()
-@property(nonatomic,strong)UserLoginViewModel *loginViewModel;
+@property(nonatomic,readonly,strong)UserLoginViewModel *viewModel;
 @end
 
 @implementation UserLoginViewController
+@dynamic viewModel;
+
+-(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    if (self = [super initWithViewModel:[[UserLoginViewModel alloc] init] nibName:nibNameOrNil bundle:nibBundleOrNil]) {
+    }
+    return self;
+}
 
 -(id)initWithCoder:(NSCoder *)aDecoder{
-    if (self = [super initWithCoder:aDecoder]) {
-       self.viewModel = self.loginViewModel = [[UserLoginViewModel alloc] init];
+    if (self = [super initWithViewModel:[[UserLoginViewModel alloc] init] coder:aDecoder]) {
     }
     return self;
 }
@@ -27,17 +33,50 @@
     [super viewDidLoad];
     
     @weakify(self)
-    self.loginButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+
+    [[self.userNameField.rac_textSignal filter:^BOOL(NSString *value) {
+                return @([[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]);
+    }] subscribeNext:^(NSString *value) {
         @strongify(self)
-        [self lockViewWithStatus:@"正在登陆。。。"];
-        return [[[[self.loginViewModel loginWithUserName:@"user" andPwd:@"password"] doError:^(NSError *error) {
-            NSLog(@"%@",error.userInfo.allValues[0]);
-        }] doNext:^(id x) {
+        self.viewModel.userName = value;
+    }];
+    
+    [[self.pwdField.rac_textSignal filter:^BOOL(NSString *value) {
+        return @([[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]);
+    }] subscribeNext:^(NSString *value) {
+        @strongify(self)
+        self.viewModel.passwd = value;
+    }];
+    
+    
+    self.loginButton.rac_command = [[RACCommand alloc] initWithEnabled:self.viewModel.loginParamValidationSignal signalBlock:^RACSignal *(id input) {
+        @strongify(self)
+        [self lockViewWithStatus:@"正在登陆..."];
+        return [[self.viewModel.loginAction execute:nil] doNext:^(id x) {
             NSLog(@"1232321344%@",x);
-        }] doCompleted:^{
-            NSLog(@"complete");
         }];
     }];
+
+    
+//    RACSignal *enableSignal = [RACSignal combineLatest:@[[self.userNameField.rac_textSignal map:^id(NSString *value) {
+//        return @([[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]);
+//    }],[self.pwdField.rac_textSignal map:^id(NSString *value) {
+//        return @([[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]);
+//    }]] reduce:^id(NSNumber *usernameValid, NSNumber *passwordValid){
+//        return @([usernameValid boolValue] && [passwordValid boolValue]);
+//    }]  ;
+//    
+//    self.loginButton.rac_command = [[RACCommand alloc] initWithEnabled:enableSignal signalBlock:^RACSignal *(id input) {
+//        @strongify(self)
+//        [self lockViewWithStatus:@"正在登陆..."];
+//        return [[[[self.viewModel loginWithUserName:[self.userNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] andPwd:[self.pwdField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]] doError:^(NSError *error) {
+//            NSLog(@"%@",error.userInfo.allValues[0]);
+//        }] doNext:^(id x) {
+//            NSLog(@"1232321344%@",x);
+//        }] doCompleted:^{
+//            NSLog(@"complete");
+//        }];
+//    }];
     // Do any additional setup after loading the view.
 }
 

@@ -7,7 +7,6 @@
 //
 
 #import "CustomArticleAlertView.h"
-#import "ResDefine.h"
 
 @interface CustomArticleAlertView()
 {
@@ -32,7 +31,6 @@
         _textViewFrame.size.height-=_textViewFrame.origin.y+10;
         
         _textView = [[UITextView alloc] initWithFrame:_textViewFrame];
-        _textView.text = NSLocalizedStringFromTable(@"ServerArticleText",Res_String,@"");
         _textView.backgroundColor = [UIColor clearColor];
         _textView.textColor = [UIColor whiteColor];
         _textView.font = [UIFont systemFontOfSize:15];
@@ -43,7 +41,6 @@
         _lbl_title = [[UILabel alloc] initWithFrame:CGRectMake(_textView.frame.origin.x, _btn_close.frame.origin.y-10, 140, 40)];
         _lbl_title.backgroundColor = [UIColor clearColor];
         _lbl_title.textAlignment = NSTextAlignmentLeft;
-        _lbl_title.text = NSLocalizedStringFromTable(@"ServerArticle",Res_String,@"");
         _lbl_title.font = [UIFont systemFontOfSize:18];
         _lbl_title.textColor = [UIColor colorWithRed:28.0f/255.0f green:132.0f/255.0f  blue:156.0f/255.0f  alpha:1];
         [frameImageView addSubview:_lbl_title];

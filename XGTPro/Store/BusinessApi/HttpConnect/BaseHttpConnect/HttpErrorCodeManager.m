@@ -7,19 +7,17 @@
 //
 
 #import "HttpErrorCodeManager.h"
-#import "ResDefine.h"
-
 @implementation HttpErrorCodeManager
 
 +(NSString*)getDesFromErrorCode:(HttpErrorCode)code
 {
     if(code == HttpErrorCode_TimerOut)
-        return NSLocalizedStringFromTable(@"HttpError2",Res_String,@"");
+        return NSLocalizedString(@"HttpError2", nil);
     else if(code == HttpErrorCode_WriteFileFail)
-        return NSLocalizedStringFromTable(@"HttpError3",Res_String,@"");
+        return NSLocalizedString(@"HttpError3", nil);
     else if(code == HttpErrorCode_NetworkFail)
-        return NSLocalizedStringFromTable(@"HttpError4",Res_String,@"");
+        return NSLocalizedString(@"HttpError4", nil);
     
-    return NSLocalizedStringFromTable(@"HttpError1",Res_String,@"");
+    return NSLocalizedString(@"HttpError1", nil);
 }
 @end

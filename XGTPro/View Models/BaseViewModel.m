@@ -8,7 +8,7 @@
 
 #import "BaseViewModel.h"
 #import <ReactiveCocoa.h>
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
 #import "BusinessManager.h"
 
 @interface BaseViewModel()
@@ -30,6 +30,7 @@
             @strongify(self)
             NSError * error = [self.error copy];
             [subscriber sendNext:error];
+            [subscriber sendCompleted];
             return [RACDisposable disposableWithBlock:^{
                 
             }];
@@ -42,6 +43,7 @@
             @strongify(self)
             NSError * error = [self.error copy];
             [subscriber sendNext:error];
+            [subscriber sendCompleted];
             return [RACDisposable disposableWithBlock:^{
                 
             }];

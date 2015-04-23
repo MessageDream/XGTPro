@@ -14,6 +14,7 @@ target 'XGTPro', :exclusive => true do
   pod 'SDWebImage'
   pod 'SVProgressHUD'
   pod 'XXNibBridge','~> 2.1'
+  pod 'LinqToObjectiveC'
 end
 
 

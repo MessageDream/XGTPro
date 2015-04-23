@@ -7,7 +7,6 @@
 //
 #import "TitleBarView.h"
 #import "BaseViewController.h"
-#import "BaseCustomMessageBox.h"
 #import "ImageUtils.h"
 #import "MainStyle.h"
 #import "BaseViewModel.h"
@@ -25,8 +24,7 @@
 @implementation BaseViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         _orientation = [UIApplication sharedApplication].statusBarOrientation;
     }
     return self;
@@ -45,6 +43,30 @@
     }
     return self;
 }
+
+- (instancetype)initWithViewModel:(BaseViewModel *)viewModel{
+    if (self=[super init]) {
+        _viewModel = viewModel;
+        _orientation = [UIApplication sharedApplication].statusBarOrientation;
+    }
+    return self;
+}
+
+- (instancetype)initWithViewModel:(BaseViewModel *)viewModel nibName:(NSString *)nibName bundle:(NSBundle *)bundle{
+    if (self = [super initWithNibName:nibName bundle:bundle]) {
+        _viewModel = viewModel;
+        _orientation = [UIApplication sharedApplication].statusBarOrientation;
+    }
+    return self;
+}
+- (instancetype)initWithViewModel:(BaseViewModel *)viewModel coder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+        _viewModel = viewModel;
+        _orientation = [UIApplication sharedApplication].statusBarOrientation;
+    }
+    return self;
+}
+
 
 - (void)viewDidLoad{
     [super viewDidLoad];
