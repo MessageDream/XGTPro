@@ -260,19 +260,5 @@ static NSOperationQueue *operationQueue = nil;
     return data;
 }
 
--(void)dealloc{
-    self.resquestType = nil;
-    self.requestPath = nil;
-    self.baseUrl=nil;
-    _body = nil;
-    _respones = nil;
-    _requestOperation=nil;
-    _resquestHeads = nil;
-    _connection = nil;
-    _success=nil;
-    _delegate=nil;
-    _failure=nil;
-    _downloadProcess=nil;
-}
 @end
 

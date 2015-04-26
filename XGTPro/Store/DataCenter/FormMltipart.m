@@ -9,10 +9,4 @@
 #import "FormMltipart.h"
 
 @implementation FormMltipart
--(void)dealloc{
-    self.formMimeType = nil;
-    self.formName = nil;
-    self.formFileName = nil;
-    self.data = nil;
-}
 @end

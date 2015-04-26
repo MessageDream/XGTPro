@@ -9,7 +9,7 @@
 #import "CustomPullRefreshTableView.h"
 @interface CustomPullRefreshTableView ()
 {
-    __weak  CustomPullRefreshView *currentView;
+  __weak  CustomPullRefreshView *currentView;
   __weak  CustomPullRefreshView *topView;
   __weak  CustomPullRefreshView *bottomView;
   __weak  CustomPullRefreshView *leftView;
@@ -41,9 +41,10 @@
         if (topView) {
             [topView removeFromSuperview];
         }
-        __weak CustomPullRefreshTableView *blockSelf=self;
+        __weak typeof(self) weakSelf = self;
          topView=[self addPullToRefreshPosition:CustomPullRefreshViewPositionTop actionHandler:^(CustomPullRefreshView *v) {
-             if (blockSelf.pullRefreshDelegate!=nil) {
+             __weak typeof(self) blockSelf = weakSelf;
+             if (blockSelf.pullRefreshDelegate && [blockSelf.pullRefreshDelegate respondsToSelector:@selector(PullRefreshTableViewTopRefresh:)]) {
                   [blockSelf.pullRefreshDelegate PullRefreshTableViewTopRefresh:blockSelf];
              }
          }];
@@ -63,9 +64,10 @@
         if (bottomView) {
             [bottomView removeFromSuperview];
         }
-        __weak CustomPullRefreshTableView *blockSelf=self;
+        __weak typeof(self) weakSelf = self;
         bottomView=[self addPullToRefreshPosition:CustomPullRefreshViewPositionBottom actionHandler:^(CustomPullRefreshView *v) {
-            if (blockSelf.pullRefreshDelegate!=nil) {
+            __weak typeof(self) blockSelf = weakSelf;
+            if (blockSelf.pullRefreshDelegate && [blockSelf.pullRefreshDelegate respondsToSelector:@selector(PullRefreshTableViewBottomRefresh:)]) {
                 [blockSelf.pullRefreshDelegate PullRefreshTableViewBottomRefresh:blockSelf];
             }
         }];
@@ -85,9 +87,10 @@
         if (leftView) {
             [leftView removeFromSuperview];
         }
-        __weak CustomPullRefreshTableView *blockSelf=self;
+        __weak typeof(self) weakSelf = self;
         leftView=[self addPullToRefreshPosition:CustomPullRefreshViewPositionLeft actionHandler:^(CustomPullRefreshView *v) {
-            if (blockSelf.pullRefreshDelegate!=nil) {
+            __weak typeof(self) blockSelf = weakSelf;
+           if (blockSelf.pullRefreshDelegate && [blockSelf.pullRefreshDelegate respondsToSelector:@selector(PullRefreshTableViewLeftRefresh:)]) {
                  [blockSelf.pullRefreshDelegate PullRefreshTableViewLeftRefresh:blockSelf];
             }
         }];
@@ -107,9 +110,10 @@
         if (rightView) {
             [rightView removeFromSuperview];
         }
-        __weak CustomPullRefreshTableView *blockSelf=self;
+        __weak typeof(self) weakSelf = self;
         rightView=[self addPullToRefreshPosition:CustomPullRefreshViewPositionRight actionHandler:^(CustomPullRefreshView *v) {
-            if (blockSelf.pullRefreshDelegate!=nil) {
+            __weak typeof(self) blockSelf = weakSelf;
+             if (blockSelf.pullRefreshDelegate && [blockSelf.pullRefreshDelegate respondsToSelector:@selector(PullRefreshTableViewRightRefresh:)]) {
                  [blockSelf.pullRefreshDelegate PullRefreshTableViewRightRefresh:blockSelf];
             }
         }];
@@ -169,10 +173,5 @@
     [self removeObserver:currentView forKeyPath:@"contentOffset"];
     [self removeObserver:currentView forKeyPath:@"contentSize"];
     [self removeObserver:currentView forKeyPath:@"frame"];
-    _pullRefreshDelegate=nil;
-    topView=nil;
-    bottomView=nil;
-    leftView=nil;
-    rightView=nil;
 }
 @end
