@@ -24,7 +24,7 @@
     RACSignal *signal = objc_getAssociatedObject(self, _cmd);
     if (signal != nil) return signal;
     @weakify(self)
-    RACSignal *didBusinessFail = [[self rac_signalForSelector:@selector(didBusinessFailWithCode:andMsg:)  fromProtocol:@protocol(BusinessProtocol)] flattenMap:^RACStream *(id value) {
+    RACSignal *didBusinessFail = [[self rac_signalForSelector:@selector(didBusinessFailWithCode:andMsg:)  fromProtocol:@protocol(BusinessDelegate)] flattenMap:^RACStream *(id value) {
         
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             @strongify(self)
@@ -38,7 +38,7 @@
     }];
     
     RACSignal *didBusinessError = [[self rac_signalForSelector:@selector(didBusinessErrorWithCode:andMsg:)
-                                                  fromProtocol:@protocol(BusinessProtocol)] flattenMap:^RACStream *(id value) {
+                                                  fromProtocol:@protocol(BusinessDelegate)] flattenMap:^RACStream *(id value) {
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             @strongify(self)
             NSError * error = [self.error copy];
@@ -50,7 +50,7 @@
         }];
     }];
     
-    RACSignal *didBusinessSuccess = [[self rac_signalForSelector:@selector(didBusinessSuccessWithModel:)  fromProtocol:@protocol(BusinessProtocol)] flattenMap:^RACStream *(id value) {
+    RACSignal *didBusinessSuccess = [[self rac_signalForSelector:@selector(didBusinessSuccessWithModel:)  fromProtocol:@protocol(BusinessDelegate)] flattenMap:^RACStream *(id value) {
         
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
 //            @strongify(self)
@@ -68,11 +68,11 @@
 }
 
 - (RACSignal *)creatBusinessWithName:(NSString *)businessName andExecuteWithData:(NSDictionary *)dic;{
-    return [self creatBusinessWithName:businessName andObserver:self andExecuteWithData:dic];
+    return [self creatBusinessWithName:businessName andDelegate:self andExecuteWithData:dic];
 }
 
-- (RACSignal *)creatBusinessWithName:(NSString *)businessName andObserver:(id<BusinessProtocol>)observer andExecuteWithData:(NSDictionary *)dic{
-    return  [BusinessManager excuteWithBusinessName:businessName andObserver:observer andParameters:dic];
+- (RACSignal *)creatBusinessWithName:(NSString *)businessName andDelegate:(id<BusinessDelegate>)delegate andExecuteWithData:(NSDictionary *)dic{
+    return  [BusinessManager excuteWithBusinessName:businessName andDelegate:delegate andParameters:dic];
 }
 #pragma mark - BusinessProtocol
 - (void)didBusinessFailWithCode:(NSInteger)code andMsg:(NSString *)msg{
@@ -87,12 +87,7 @@
 
 }
 
--(void)dealloc
-{
-    if(baseBusiness!=nil)
-    {
-        baseBusiness.businessObserver = nil;
-        [baseBusiness cancel];
-    }
+-(void)dealloc{
+
 }
 @end

@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BaseBusiness.h"
+#import "BusinessProtocol.h"
 
 @class RACSignal;
 
 @interface BusinessManager : NSObject
-+(RACSignal *)excuteWithBusinessName:(NSString *)businessName andObserver:(id<BusinessProtocol>)observer andParameters:(NSDictionary *)param;
++(RACSignal *)excuteWithBusinessName:(NSString *)businessName andDelegate:(id<BusinessDelegate>)delegate andParameters:(NSDictionary *)param;
 +(RACSignal *)excuteWithBusinessName:(NSString *)businessName andParameters:(NSDictionary *)param;
 @end

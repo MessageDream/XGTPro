@@ -11,13 +11,11 @@
 #import "BaseBusiness.h"
 #import <ReactiveViewModel.h>
 #import "BusinessNameDefine.h"
-@interface BaseViewModel : RVMViewModel<BusinessProtocol>
+@interface BaseViewModel : RVMViewModel<BusinessDelegate>
 {
-@protected
-    BaseBusiness *baseBusiness;
 }
-@property(nonatomic,assign)id<ViewModelDelegate> observer;
+@property(nonatomic,assign)id<ViewModelDelegate> delegate;
 @property(nonatomic,strong)RACSignal *rac_isObserverActiveSignal;
 - (RACSignal *)creatBusinessWithName:(NSString *)businessName andExecuteWithData:(NSDictionary *)dic;
-- (RACSignal *)creatBusinessWithName:(NSString *)businessName andObserver:(id<BusinessProtocol>)observer andExecuteWithData:(NSDictionary *)dic;
+- (RACSignal *)creatBusinessWithName:(NSString *)businessName andDelegate:(id<BusinessDelegate>)delegate andExecuteWithData:(NSDictionary *)dic;
 @end

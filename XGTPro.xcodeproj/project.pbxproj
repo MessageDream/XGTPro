@@ -207,6 +207,8 @@
 		B2E24F411AE007CA003E0116 /* BusinessNameDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusinessNameDefine.h; sourceTree = "<group>"; };
 		B2E24F431AE013F1003E0116 /* UserLoginBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserLoginBusiness.h; path = UserLoginBusiness/UserLoginBusiness.h; sourceTree = "<group>"; };
 		B2E24F441AE013F1003E0116 /* UserLoginBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserLoginBusiness.m; path = UserLoginBusiness/UserLoginBusiness.m; sourceTree = "<group>"; };
+		B2F2BE901AECDF580015F34B /* BusinessProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusinessProtocol.h; sourceTree = "<group>"; };
+		B2F2BE911AECE9FB0015F34B /* BusinessProtocol+Rac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BusinessProtocol+Rac.h"; sourceTree = "<group>"; };
 		DD7C0904189E4FD7C30F0068 /* Pods-XGTPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XGTPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XGTPro/Pods-XGTPro.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -582,8 +584,10 @@
 				B271F9D11ADE294100B6C880 /* BusinessManager.h */,
 				B271F9D21ADE294100B6C880 /* BusinessManager.m */,
 				B2E24F411AE007CA003E0116 /* BusinessNameDefine.h */,
+				B2F2BE901AECDF580015F34B /* BusinessProtocol.h */,
 				B2C74EA11ADD0475002C5C3C /* BaseBusiness.h */,
 				B2C74EA21ADD0475002C5C3C /* BaseBusiness.m */,
+				B2F2BE911AECE9FB0015F34B /* BusinessProtocol+Rac.h */,
 				B271F9D71ADE5A2900B6C880 /* BaseBusiness+Rac.h */,
 				B271F9D81ADE5A2900B6C880 /* BaseBusiness+Rac.m */,
 				B2C74EA91ADD07D0002C5C3C /* HttpConnect */,

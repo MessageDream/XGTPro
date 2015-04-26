@@ -28,6 +28,10 @@
     return self;
 }
 
+-(void)setDelegate:(id<BusinessDelegate>)delegate{
+    self.businessDelegate = delegate;
+}
+
 - (void)execute:(NSDictionary *)theParm{
     if(theParm!=nil&&[self.httpConnect.resquestHeads.allValues count]==0)//可能有无参数的情况
     {
@@ -36,7 +40,7 @@
     }
     
     if (_httpConnect) {
-        _httpConnect.observer = self;
+        _httpConnect.delegate = self;
         [_httpConnect sendWithParam:theParm];
     }
 }
@@ -115,8 +119,8 @@
 }
 
 - (void)handleBusinessError{
-    if (self.businessObserver && [self.businessObserver respondsToSelector:@selector(didBusinessErrorWithCode:andMsg:)]){
-        [self.businessObserver didBusinessErrorWithCode:_errCode andMsg:_errmsg];
+    if (self.businessDelegate && [self.businessDelegate respondsToSelector:@selector(didBusinessErrorWithCode:andMsg:)]){
+        [self.businessDelegate didBusinessErrorWithCode:_errCode andMsg:_errmsg];
     }
 }
 
@@ -143,8 +147,8 @@
 -(void) didHttpConnectError:(enum HttpErrorCode)errorCode{
     _errCode = errorCode;
     _errmsg = [HttpErrorCodeManager getDesFromErrorCode:errorCode];
-    if (self.businessObserver && [self.businessObserver respondsToSelector:@selector(didBusinessFailWithCode:andMsg:)]){
-        [self.businessObserver didBusinessFailWithCode:_errCode andMsg:_errmsg];
+    if (self.businessDelegate && [self.businessDelegate respondsToSelector:@selector(didBusinessFailWithCode:andMsg:)]){
+        [self.businessDelegate didBusinessFailWithCode:_errCode andMsg:_errmsg];
     }
 }
 
@@ -162,13 +166,12 @@
         }
        self.resultModel = [self parseModelFromDic:responseBodyDic];
     }
-    if (self.businessObserver && [self.businessObserver respondsToSelector:@selector(didBusinessSuccessWithModel:)]){
-        [self.businessObserver didBusinessSuccessWithModel:self.resultModel];
+    if (self.businessDelegate && [self.businessDelegate respondsToSelector:@selector(didBusinessSuccessWithModel:)]){
+        [self.businessDelegate didBusinessSuccessWithModel:self.resultModel];
     }
 }
 
-
 -(void)dealloc{
-    self.httpConnect.observer = nil;
+    self.httpConnect.delegate = nil;
 }
 @end

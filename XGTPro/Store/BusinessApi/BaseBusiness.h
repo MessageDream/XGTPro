@@ -36,21 +36,9 @@ typedef NS_ENUM(NSInteger, BusinessErrorType)
 #import "BaseHttpConnect.h"
 #import "HttpConnectDefineData.h"
 #import "BaseModel.h"
+#import "BusinessProtocol.h"
 
-@class BaseBusiness;
-
-@protocol DownLoadBusinessProtocol <NSObject>
--(void)didDownLoadFileOfByteCount:(BaseBusiness *)business forByteCount:(long long)byteCount forTotalByteCount:(long long)totalByteCount;
-@end
-
-@protocol BusinessProtocol <NSObject>
-
-- (void)didBusinessSuccessWithModel:(BaseModel*)model;
-- (void)didBusinessFailWithCode:(NSInteger)code andMsg:(NSString *)msg;
-- (void)didBusinessErrorWithCode:(NSInteger)code andMsg:(NSString *)msg;
-@end
-
-@interface BaseBusiness : NSObject<HttpConnectDelegate>
+@interface BaseBusiness : NSObject<HttpConnectDelegate,BusinessProtocol>
 {
 @protected
     NSInteger _errCode;
@@ -59,17 +47,11 @@ typedef NS_ENUM(NSInteger, BusinessErrorType)
     BaseHttpConnect *_httpConnect;
 }
 
-@property(nonatomic,weak) id<BusinessProtocol>businessObserver;
+@property(nonatomic,weak) id<BusinessDelegate>businessDelegate;
 @property(nonatomic)BusinessErrorType businessErrorType;
 @property(nonatomic,strong)BaseModel *resultModel;
 @property(nonatomic,readonly)NSString *errmsg;
 @property(nonatomic,readonly)NSInteger errCode;
-
-//执行网络请求
-- (void)execute:(NSDictionary *)param;
-
-//取消请求
-- (void)cancel;
 
 
 //获取错误码

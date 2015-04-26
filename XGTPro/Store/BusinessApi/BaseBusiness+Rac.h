@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ReactiveCocoa.h>
 #import "BaseBusiness.h"
+#import "BusinessProtocol+Rac.h"
 
-@interface BaseBusiness (Rac)
-- (RACSignal *)rac_isActiveSignal;
+@interface BaseBusiness (Rac) <BusinessRACProtocol>
 @end

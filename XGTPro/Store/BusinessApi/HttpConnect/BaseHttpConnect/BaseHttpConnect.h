@@ -69,7 +69,7 @@ typedef NS_ENUM(NSUInteger , HttpContentStauts){
 @property(nonatomic,readonly) NSOperationQueue *operationQueue;
 @property(nonatomic,readonly)HttpConnectRespones *respones;
 @property(nonatomic,readonly)AFHTTPRequestOperation *requestOperation;
-@property(nonatomic,weak)id<HttpConnectDelegate> observer;
+@property(nonatomic,weak)id<HttpConnectDelegate> delegate;
 
 -(void)sendWithParam:(NSDictionary *)param;
 -(void)send;

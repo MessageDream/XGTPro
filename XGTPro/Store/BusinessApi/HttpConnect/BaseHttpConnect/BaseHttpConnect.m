@@ -31,7 +31,7 @@ static NSOperationQueue *operationQueue = nil;
 @synthesize body=_body;
 @synthesize stauts = _stauts;
 @synthesize errorCode = _errorCode;
-@synthesize observer=_observer;
+@synthesize delegate=_delegate;
 
 +(NSOperationQueue *)shareQueue{
     
@@ -53,10 +53,10 @@ static NSOperationQueue *operationQueue = nil;
         
         _operationQueue=[BaseHttpConnect shareQueue];
         
-        __weak BaseHttpConnect *blockSelf = self;
+        __weak typeof(self) weakSelf = self;
         
         _success=^(AFHTTPRequestOperation *operation, id responseObject){
-            
+            __strong typeof(self) blockSelf = weakSelf;
             blockSelf.stauts = HttpContentStauts_DidRespones;
             NSHTTPURLResponse * httpResponse;
             httpResponse = operation.response;
@@ -65,21 +65,22 @@ static NSOperationQueue *operationQueue = nil;
             NSLog(@"the response status code is %ld\n",(long)httpResponse.statusCode);
 #endif
             blockSelf.respones.responesHead = [httpResponse allHeaderFields];
-            if(blockSelf.observer!=nil)
-                [blockSelf.observer didGetHttpConnectResponseHead:blockSelf.respones.responesHead];
+            if(blockSelf.delegate && [blockSelf.delegate respondsToSelector:@selector(didGetHttpConnectResponseHead:)])
+                [blockSelf.delegate didGetHttpConnectResponseHead:blockSelf.respones.responesHead];
 #ifdef DEBUG_LOG
             NSLog(@"the connection is %lu",(unsigned long)[operation.responseData length]);
 #endif
             blockSelf.stauts = HttpContentStauts_DidFinishRespones;
-            if (blockSelf.observer)
-            {
-                //需要加上业务错误对象判断的机制
-                if(blockSelf.errorCode  != HttpErrorCode_None && [blockSelf.resquestType  isEqualToString:HTTP_REQUEST_POST])
-                    [blockSelf.observer didHttpConnectError:blockSelf.errorCode];
-                else
-                {
+            if (blockSelf.delegate){
+                if(blockSelf.errorCode  != HttpErrorCode_None && [blockSelf.resquestType  isEqualToString:HTTP_REQUEST_POST]){
+                    if ([blockSelf.delegate respondsToSelector:@selector(didHttpConnectError:)]) {
+                       [blockSelf.delegate didHttpConnectError:blockSelf.errorCode];
+                    }
+                }else{
                     blockSelf.respones.responesBody =  [blockSelf parseHttpConnectResponseData: blockSelf.requestOperation.responseData ];
-                    [blockSelf.observer didHttpConnectFinish:blockSelf];
+                    if ([blockSelf.delegate respondsToSelector:@selector(didHttpConnectFinish:)]) {
+                     [blockSelf.delegate didHttpConnectFinish:blockSelf];
+                    }
                 }
             }
             [blockSelf closeConnect];
@@ -87,11 +88,12 @@ static NSOperationQueue *operationQueue = nil;
         };
         
         _failure=^(AFHTTPRequestOperation *operation, NSError *error){
+            __strong typeof(self) blockSelf = weakSelf;
             [blockSelf closeConnect];
             blockSelf.stauts = HttpContentStauts_DidStop;
             blockSelf.errorCode = error.code;
-            if (blockSelf.observer) {
-                [blockSelf.observer didHttpConnectError:blockSelf.errorCode];
+            if (blockSelf.delegate && [blockSelf.delegate respondsToSelector:@selector(didHttpConnectError:)]) {
+                [blockSelf.delegate didHttpConnectError:blockSelf.errorCode];
             }
         };
     }
@@ -116,8 +118,8 @@ static NSOperationQueue *operationQueue = nil;
         return;
     }
     
-    if (self.observer != nil) {
-        [self.observer willHttpConnectRequest:self];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(willHttpConnectRequest:)]) {
+        [self.delegate willHttpConnectRequest:self];
     }
     
     NSMutableURLRequest *request;
@@ -268,7 +270,7 @@ static NSOperationQueue *operationQueue = nil;
     _resquestHeads = nil;
     _connection = nil;
     _success=nil;
-    _observer=nil;
+    _delegate=nil;
     _failure=nil;
     _downloadProcess=nil;
 }

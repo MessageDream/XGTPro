@@ -7,30 +7,36 @@
 //
 
 #import "BusinessManager.h"
-#import "BaseBusiness+Rac.h"
+#import "BusinessProtocol+Rac.h"
 
 @implementation BusinessManager
 static NSMutableArray *businessPool;
 static NSMutableDictionary *businessClassDic;
 +(RACSignal *)excuteWithBusinessName:(NSString *)businessName andParameters:(NSDictionary *)param{
-    return [self excuteWithBusinessName:businessName andObserver:nil andParameters:param];
+    return [self excuteWithBusinessName:businessName andDelegate:nil andParameters:param];
 }
 
-+(RACSignal *)excuteWithBusinessName:(NSString *)businessName andObserver:(id<BusinessProtocol>)observer andParameters:(NSDictionary *)param{
++(RACSignal *)excuteWithBusinessName:(NSString *)businessName  andDelegate:(id<BusinessDelegate>)delegate andParameters:(NSDictionary *)param{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         businessPool =  [[NSMutableArray alloc] init];
     });
-    @weakify(observer)
+    @weakify(delegate)
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        BaseBusiness *business = [self creatBusinessWithName:businessName];
-        @strongify(observer)
+         id<BusinessProtocol,BusinessRACProtocol> business = [self creatBusinessWithName:businessName];
+        @strongify(delegate)
         if (business) {
-            business.businessObserver = observer;
+            if ([business respondsToSelector:@selector(setDelegate:)]) {
+                [business setDelegate:delegate];
+            }
             [businessPool addObject:business];
-            RACSignal *businessSignal = business.rac_isActiveSignal;
-            [businessSignal  subscribe:subscriber];
-            [business execute:param];
+            if ([business respondsToSelector:@selector(rac_isActiveSignal)]) {
+                 RACSignal *businessSignal = [business rac_isActiveSignal];
+                [businessSignal  subscribe:subscriber];
+            }
+            if ([business respondsToSelector:@selector(execute:)]) {
+                 [business execute:param];
+             }
             return [RACDisposable disposableWithBlock:^{
                 [businessPool removeObject:business];
             }];
@@ -40,7 +46,7 @@ static NSMutableDictionary *businessClassDic;
     }];
 }
 
-+(BaseBusiness *)creatBusinessWithName:(NSString *)name{
++(id<BusinessProtocol,BusinessRACProtocol>)creatBusinessWithName:(NSString *)name{
     
     static dispatch_once_t dicOnceToken;
     dispatch_once(&dicOnceToken, ^{
@@ -52,7 +58,7 @@ static NSMutableDictionary *businessClassDic;
         return [[cls alloc] init];
     }else{
         cls = NSClassFromString(name);
-        if (cls && [cls isSubclassOfClass:[BaseBusiness class]]) {
+        if (cls && [cls conformsToProtocol:@protocol(BusinessProtocol)] && [cls conformsToProtocol:@protocol(BusinessRACProtocol)]) {
             [businessClassDic setObject:cls forKey:name];
             return [[cls alloc] init];
         }else{

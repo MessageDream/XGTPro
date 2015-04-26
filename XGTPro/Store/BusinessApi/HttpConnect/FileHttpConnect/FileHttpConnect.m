@@ -20,14 +20,16 @@
 
 -(id)init{
     if (self=[super init]) {
-         __weak BaseHttpConnect *blockSelf = self;
+         __weak typeof(self) weakSelf = self;
         _downloadProcess=^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead){
-            if(blockSelf.observer!=nil)
-                [blockSelf.observer httpConnectResponse:blockSelf getByteCount:bytesRead];
+            __strong typeof(self) blockSelf = weakSelf;
+            if(blockSelf.delegate && [blockSelf.delegate respondsToSelector:@selector(httpConnectResponse:getByteCount:)])
+                [blockSelf.delegate httpConnectResponse:blockSelf getByteCount:bytesRead];
         };
         _uploadProcess=^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead){
-            if(blockSelf.observer!=nil)
-                [blockSelf.observer httpConnectResponse:blockSelf uploadByteCount:bytesRead];
+            __strong typeof(self) blockSelf = weakSelf;
+            if(blockSelf.delegate && [blockSelf.delegate respondsToSelector:@selector(httpConnectResponse:uploadByteCount:)])
+                [blockSelf.delegate httpConnectResponse:blockSelf uploadByteCount:bytesRead];
         };
 
     }
