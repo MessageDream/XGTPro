@@ -16,8 +16,7 @@ static NSOperationQueue *operationQueue = nil;
     
 }
 +(void)processFormMltipart:(id<AFMultipartFormData>)formData obj:(FormMltipart *)obj;
-//解析返回数据
-- (id)parseHttpConnectResponseData:(NSData *)data;
+
 @end
 
 @implementation BaseHttpConnect
@@ -241,12 +240,10 @@ static NSOperationQueue *operationQueue = nil;
 - (void)closeConnect{
 #ifdef DEBUG_LOG
     NSLog(@"[client operationQueue]  -count - ----->%lu",(unsigned long)[[_operationQueue operations] count]);
-    //[DebugManager LogDebug:@"[client operationQueue]  -count - ----->%i",[[[client operationQueue] operations] count]];
 #endif
     if ([_requestOperation isCancelled]) {
         return;
     }
-   // [_requestOperation cancel];
 }
 
 

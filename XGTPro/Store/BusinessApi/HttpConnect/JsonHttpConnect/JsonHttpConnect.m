@@ -7,6 +7,11 @@
 //
 
 #import "JsonHttpConnect.h"
+@interface JsonHttpConnect()
+- (void)createBaseBussinessHeads;
+- (void)createBaseBussinessHttpBody:(NSDictionary *)theParam;
+- (void)setUrlParam:(NSDictionary *)theParam;
+@end
 
 @implementation JsonHttpConnect
 
@@ -14,7 +19,6 @@
     if (![_resquestHeads objectForKey:HEADER_CONTENT_TYPE_NAME]) {
         [_resquestHeads setObject:HEADER_CONTENT_TYPE_JSON_VALUE forKey:HEADER_CONTENT_TYPE_NAME];
     }
-    //[_resquestHeads setObject:HEADER_CONTENT_LENGTH_VALUE forKey:HEADER_CONTENT_LENGTH_NAME];
 }
 
 //创建消息体
@@ -64,10 +68,9 @@
     }
 }
 
-- (void)sendWithParam:(NSDictionary *)theParam{
+- (void)sendWithParam:(NSDictionary *)param{
     [self createBaseBussinessHeads];
-    [self createBaseBussinessHttpBody:theParam];
-    [self send];
+    [super sendWithParam:param];
 }
 
 

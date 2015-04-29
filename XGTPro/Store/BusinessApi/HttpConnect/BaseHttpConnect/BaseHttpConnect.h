@@ -75,5 +75,5 @@ typedef NS_ENUM(NSUInteger , HttpContentStauts){
 -(void)send;
 -(void)cancel;
 - (void)closeConnect;
-
+- (id)parseHttpConnectResponseData:(NSData *)data;
 @end

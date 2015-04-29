@@ -10,7 +10,4 @@
 
 
 @interface JsonHttpConnect : BaseHttpConnect
-
--(void)setUrlParam:(NSDictionary *)theParam;
-- (void)sendWithParam:(NSDictionary *)param;
 @end
