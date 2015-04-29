@@ -51,8 +51,6 @@
     }
 }
 
-
-
 //获取错误码
 - (void)errorCodeFromResponse:(NSDictionary *)responseBodyDic{
     if (responseBodyDic) {
