@@ -67,7 +67,7 @@ static NSOperationQueue *operationQueue = nil;
             if(blockSelf.delegate && [blockSelf.delegate respondsToSelector:@selector(didGetHttpConnectResponseHead:)])
                 [blockSelf.delegate didGetHttpConnectResponseHead:blockSelf.respones.responesHead];
 #ifdef DEBUG_LOG
-            NSLog(@"the connection is %lu",(unsigned long)[operation.responseData length]);
+            NSLog(@"the response data length is %lu",(unsigned long)[operation.responseData length]);
 #endif
             blockSelf.stauts = HttpContentStauts_DidFinishRespones;
             if (blockSelf.delegate){
