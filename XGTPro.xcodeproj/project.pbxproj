@@ -199,7 +199,6 @@
 		B2C74EB21ADD07D0002C5C3C /* HttpErrorCodeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpErrorCodeManager.m; sourceTree = "<group>"; };
 		B2C74EB41ADD07D0002C5C3C /* FileHttpConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHttpConnect.h; sourceTree = "<group>"; };
 		B2C74EB51ADD07D0002C5C3C /* FileHttpConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHttpConnect.m; sourceTree = "<group>"; };
-		B2C74EB71ADD07D0002C5C3C /* HttpConnectDefineData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpConnectDefineData.h; sourceTree = "<group>"; };
 		B2C74EB81ADD07D0002C5C3C /* JsonHttpConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonHttpConnect.h; sourceTree = "<group>"; };
 		B2C74EB91ADD07D0002C5C3C /* JsonHttpConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonHttpConnect.m; sourceTree = "<group>"; };
 		B2D382A81AE53D7D00FC27DA /* UserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLoginViewController.h; sourceTree = "<group>"; };
@@ -648,7 +647,6 @@
 		B2C74EB61ADD07D0002C5C3C /* JsonHttpConnect */ = {
 			isa = PBXGroup;
 			children = (
-				B2C74EB71ADD07D0002C5C3C /* HttpConnectDefineData.h */,
 				B2C74EB81ADD07D0002C5C3C /* JsonHttpConnect.h */,
 				B2C74EB91ADD07D0002C5C3C /* JsonHttpConnect.m */,
 			);

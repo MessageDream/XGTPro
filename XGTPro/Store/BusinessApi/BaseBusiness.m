@@ -10,13 +10,36 @@
 #import "JsonHttpConnect.h"
 #import "HttpErrorCodeManager.h"
 
+typedef NS_ENUM(NSInteger, BusinessErrorType)
+{
+    //    201	接口处理超时。
+    //    202	必需的参数为空。
+    //    203	系统错误。
+    //    204	参数错误。
+    //    8001	令牌失效
+    
+    REQUEST_USER_ERROR=0,
+    REQUEST_NOERROR=1,
+    REQUEST_VERYCODE_ERROR= 2, //验证码不正确
+    REQUEST_VERYCODE_NULL =3, //验证码为空
+    REQUEST_VERYCODE_SEND_ERROR= 4, //发送验证码失败
+    REQUEST_UPDATE_ERROR =10, //更新失败
+    
+    REQUEST_TIME_ERROR=201,
+    REQUEST_PARAMNULL_ERROR=202,
+    REQUEST_SYSTEM_ERROR=203,
+    
+    REQUEST_PARAM_ERROR =403, //请求参数或秘钥错误
+    
+    REQUEST_AUTH_ERROR=8001,
+    
+};
+
 @interface BaseBusiness()
 @property(nonatomic,strong) BaseHttpConnect * httpConnect;
 @end
 
 @implementation BaseBusiness
-
-@synthesize businessErrorType = _businessErrorType;
 @synthesize httpConnect = _httpConnect;
 @synthesize errmsg = _errmsg;
 @synthesize errCode = _errCode;
@@ -56,11 +79,11 @@
         if ([responseBodyDic isKindOfClass:[NSDictionary class]]) {
             //附加部分，具体根据接口判断
             if (![responseBodyDic objectForKey:@"status"]) {
-                _errCode=NO_ERROR;
+                _errCode=REQUEST_NOERROR;
             }else{
                 _errCode = [[responseBodyDic objectForKey:@"status"] integerValue];
                 if (_errCode==10||_errCode==1) {
-                    _errCode=NO_ERROR;
+                    _errCode=REQUEST_NOERROR;
                 }
                 _errmsg = [responseBodyDic objectForKey:@"error"];
             }
@@ -70,41 +93,31 @@
         }
     }
     switch (_errCode) {
-        case USER_ERROR:
-            self.businessErrorType = REQUEST_USER_ERROR;
+        case REQUEST_USER_ERROR:
             _errmsg=@"用户名不存在或密码错误";
             break;
-        case NO_ERROR :
-            self.businessErrorType = REQUEST_NOERROR;
+        case REQUEST_NOERROR :
             break;
-        case  VERYCODE_ERROR :
-            self.businessErrorType = REQUEST_VERYCODE_ERROR;
+        case  REQUEST_VERYCODE_ERROR :
             _errmsg=@"验证码不正确";
             break;
-        case  VERYCODE_NULL :
-            self.businessErrorType = REQUEST_VERYCODE_NULL;
+        case  REQUEST_VERYCODE_NULL :
             _errmsg=@"验证码为空";
             break;
-        case  VERYCODE_SEND_ERROR :
-            self.businessErrorType = REQUEST_VERYCODE_SEND_ERROR;
+        case  REQUEST_VERYCODE_SEND_ERROR :
             _errmsg=@"发送验证码失败";
             break;
-        case  UPDATE_ERROR :
-            self.businessErrorType = REQUEST_UPDATE_ERROR;
+        case  REQUEST_UPDATE_ERROR :
             _errmsg=@"更新失败";
             break;
-        case  PARAM_ERROR :
-            self.businessErrorType = REQUEST_PARAM_ERROR;
+        case  REQUEST_PARAM_ERROR :
             _errmsg=@"请求参数或秘钥错误";
             break;
-        case TIME_ERROR:
-            self.businessErrorType = REQUEST_TIME_ERROR;
+        case REQUEST_TIME_ERROR:
             break;
-        case SYSTEM_ERROR:
-            self.businessErrorType = REQUEST_SYSTEM_ERROR;
+        case REQUEST_SYSTEM_ERROR:
             break;
-        case AUTH_ERROR:
-            self.businessErrorType = REQUEST_AUTH_ERROR;
+        case REQUEST_AUTH_ERROR:
             break;
         default:
             break;
