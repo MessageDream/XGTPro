@@ -57,7 +57,4 @@
     objc_setAssociatedObject(self, _cmd, signal, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     return signal;
 }
--(RACSignal *)getActiveSignal{
-    return self.rac_isActiveSignal;
-}
 @end
