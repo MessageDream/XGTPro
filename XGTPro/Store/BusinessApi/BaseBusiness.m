@@ -33,8 +33,7 @@
 }
 
 - (void)execute:(NSDictionary *)theParm{
-    if(theParm!=nil&&[self.httpConnect.resquestHeads.allValues count]==0)//可能有无参数的情况
-    {
+    if(theParm!=nil){//可能有无参数的情况
         if (![NSJSONSerialization isValidJSONObject:theParm])
             return;
     }
